@@ -1,0 +1,50 @@
+/* ============================================================
+   Solutudo — Spacing, radii, shadows & motion
+   ============================================================ */
+
+:root {
+  /* ---- Spacing scale (4px base) ---------------------------------- */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+
+  /* ---- Radii — rounded is core to the brand --------------------- */
+  --radius-xs:    8px;
+  --radius-sm:    12px;
+  --radius-md:    16px;    /* default card */
+  --radius-lg:    20px;
+  --radius-xl:    25px;    /* large surfaces / hero cards */
+  --radius-2xl:   32px;
+  --radius-pill:  999px;   /* buttons, chips, search bar */
+
+  /* ---- Shadows — soft, low-contrast ----------------------------- */
+  --shadow-xs:   0 1px 1px rgba(0,0,0,0.06);
+  --shadow-sm:   0 1px 3px rgba(0,0,0,0.08);
+  --shadow-card: 0 8px 28px rgba(21,21,21,0.06);
+  --shadow-md:   0 12px 32px rgba(21,21,21,0.10);
+  --shadow-lg:   0 24px 60px rgba(21,21,21,0.14);
+  --shadow-brand: 0 12px 30px rgba(167,1,253,0.28);  /* glow under brand CTA */
+
+  /* Inset hairline used on glass surfaces (search bar, nav pill). */
+  --ring-hairline: inset 0 0 0 1px #EEEEEE; /* @kind shadow */
+
+  /* ---- Glass / blur --------------------------------------------- */
+  --blur-glass: blur(20px); /* @kind other */
+  --glass-white: rgba(255,255,255,0.86); /* @kind color */
+
+  /* ---- Motion --------------------------------------------------- */
+  --ease-out:    cubic-bezier(0.22, 1, 0.36, 1); /* @kind other */
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1); /* @kind other */
+  --dur-fast:    140ms; /* @kind other */
+  --dur-base:    220ms; /* @kind other */
+  --dur-slow:    360ms; /* @kind other */
+}

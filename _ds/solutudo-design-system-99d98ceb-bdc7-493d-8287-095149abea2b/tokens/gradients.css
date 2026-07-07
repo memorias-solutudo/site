@@ -1,0 +1,28 @@
+/* ============================================================
+   Solutudo — Gradient tokens
+   The brand's signature is a warm→cool sweep
+   (yellow → orange → pink → purple) plus a full-spectrum
+   "linha de cores" rainbow rule.
+   ============================================================ */
+
+:root {
+  /* Primary brand gradient — diagonal. CTA buttons, hero accents. */
+  --grad-brand: linear-gradient(248deg, #FFD13C -9%, #F54A07 22%, #D901AA 55%, #A701FD 114%); /* @kind other */
+
+  /* Horizontal variant — used for gradient TEXT (background-clip). */
+  --grad-brand-text: linear-gradient(90deg, #FFD13C 2%, #F54A07 18%, #D901AA 34%, #A701FD 57%); /* @kind other */
+
+  /* Button-ready warm gradient (purple→pink→orange, l-to-r). */
+  --grad-cta: linear-gradient(90deg, #A701FD 0%, #FC0097 52%, #FF6849 100%); /* @kind other */
+
+  /* Full-spectrum rainbow rule — "Linha de Cores". 4px tall divider. */
+  --grad-rainbow: linear-gradient(90deg, #A701FD 6%, #674EF0 17%, #20CCEF 26%, #00FFAD 47%, #FFC024 64%, #FF6849 79%, #FF34A3 92%); /* @kind other */
+
+  /* Soft mesh wash behind search hero (50% opacity stops). */
+  --grad-hero-mesh: radial-gradient(1147px 603px at 0% 93%, rgba(255,209,60,0.5) 0%, rgba(245,74,7,0.5) 11%, rgba(217,1,170,0.5) 20%, rgba(167,1,253,0.5) 32%); /* @kind other */
+
+  /* Tinted tile washes (top-down fade), for colored stat tiles. */
+  --grad-tile-mint:   linear-gradient(180deg, #49CC9E 0%, rgba(73,204,158,0.15) 100%); /* @kind other */
+  --grad-tile-pink:   linear-gradient(180deg, #FF1B6C 0%, rgba(255,94,151,0.15) 100%); /* @kind other */
+  --grad-tile-amber:  linear-gradient(180deg, #F4B923 0%, rgba(244,185,35,0.15) 100%); /* @kind other */
+}

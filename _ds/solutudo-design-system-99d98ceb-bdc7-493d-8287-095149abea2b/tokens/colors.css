@@ -1,0 +1,76 @@
+/* ============================================================
+   Solutudo — Color tokens
+   Sourced from the brand Figma (usage-ranked palette).
+   ============================================================ */
+
+:root {
+  /* ---- Brand core ------------------------------------------------ */
+  --brand-purple:        #A701FD;   /* primary brand — 777× in Figma */
+  --brand-purple-600:    #890086;
+  --brand-purple-700:    #620E61;
+  --brand-purple-800:    #590086;
+  --brand-pink:          #FC0097;
+  --brand-pink-bright:    #FF1B6C;
+  --brand-magenta:       #FF34A3;
+  --brand-orange:        #FF6849;   /* secondary brand — 257× */
+  --brand-orange-deep:   #FC6200;
+  --brand-orange-soft:   #FF8D46;
+  --brand-yellow:        #FFC700;
+  --brand-yellow-warm:   #FFD13C;
+  --brand-amber:         #F4B923;
+  --brand-cyan:          #20CCEF;
+  --brand-green:         #00FFAD;
+  --brand-mint:          #49CC9E;
+
+  /* ---- Ink & neutrals ------------------------------------------- */
+  --ink:                 #151515;   /* default heading / near-black — 1162× */
+  --ink-pure:            #000000;
+  --slate-heading:       #58476C;   /* deep slate-purple used for hero/feed headings */
+  --gray-700:            #4D4D4D;
+  --gray-600:            #656565;   /* body / description text */
+  --gray-500:            #888888;   /* secondary text, captions */
+  --gray-400:            #9D9D9D;
+  --gray-300:            #ACACAC;   /* placeholder, muted */
+  --gray-200:            #DCDCDC;   /* hairline borders */
+  --gray-150:            #E3E3E3;
+  --gray-100:            #F2F2F2;   /* dashboard surface, section bg */
+  --white:               #FFFFFF;
+
+  /* ---- Semantic status ------------------------------------------ */
+  --success:             #399700;   /* "20% de desconto" green text */
+  --success-bright:      #2BD06A;
+  --warning:             #FFC700;
+  --danger:              #FF3B30;
+  --info:                #20CCEF;
+
+  /* ---- Pastel surfaces (tinted cards / facility tiles) ---------- */
+  --tint-lavender:       #F3E8FF;
+  --tint-lavender-200:   #E7D0FF;
+  --tint-mint:           #D9F7EE;
+  --tint-peach:          #FFE7DC;
+  --tint-yellow:         #FFF1D0;
+  --tint-pink:           #FFE3F1;
+
+  /* ---- Semantic aliases ----------------------------------------- */
+  --color-primary:       var(--brand-purple);
+  --color-accent:        var(--brand-orange);
+
+  --text-heading:        var(--ink);
+  --text-heading-alt:    var(--slate-heading);
+  --text-body:           var(--gray-600);
+  --text-muted:          var(--gray-500);
+  --text-placeholder:    var(--gray-300);
+  --text-on-brand:       var(--white);
+  --text-link:           var(--brand-purple);
+
+  --surface-page:        var(--white);          /* sites & landing pages */
+  --surface-app:         var(--gray-100);        /* internal dashboards */
+  --surface-card:        var(--white);
+  --surface-sunken:      var(--gray-100);
+
+  --border-subtle:       var(--gray-200);
+  --border-card:         var(--gray-150);
+  --border-strong:       var(--ink);
+
+  --focus-ring:          var(--brand-purple);
+}
