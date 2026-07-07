@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/solutudo-design-system-99d98ceb-bdc7-493d-8287-095149abea2b/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/solutudo-design-system-99d98ceb-bdc7-493d-8287-095149abea2b/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/solutudo-design-system-99d98ceb-bdc7-493d-8287-095149abea2b/tokens/gradients.css">
+  <link rel="stylesheet" href="_ds/solutudo-design-system-99d98ceb-bdc7-493d-8287-095149abea2b/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/solutudo-design-system-99d98ceb-bdc7-493d-8287-095149abea2b/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/solutudo-design-system-99d98ceb-bdc7-493d-8287-095149abea2b/styles.css">
+  <script src="_ds/solutudo-design-system-99d98ceb-bdc7-493d-8287-095149abea2b/_ds_bundle.js"></script>
+  <style>
+    .tb-wrap{width:100%;margin:0;padding-left:clamp(16px,3vw,40px);padding-right:0}
+    .tb-row{min-height:58px}
+    .tb-logo{height:32px}
+    .tb-desk{display:none}
+    .tb-mobinline{display:flex}
+    @media(min-width:1024px){
+      .tb-row{min-height:76px}
+      .tb-logo{height:40px}
+      .tb-desk{display:flex}
+      .tb-mobinline{display:none}
+    }
+    /* preview forçado (usado por perfis dentro de moldura mobile) */
+    header[data-force="mobile"] .tb-row{min-height:58px!important}
+    header[data-force="mobile"] .tb-logo{height:32px!important}
+    header[data-force="mobile"] .tb-desk{display:none!important}
+    header[data-force="mobile"] .tb-mobinline{display:flex!important}
+  </style>
+</helmet>
+
+<header data-force="{{ force }}" style="background:#fff;border-bottom:1px solid var(--gray-200);font-family:var(--font-sans)">
+  <div class="tb-wrap tb-row" style="display:flex;align-items:stretch">
+
+    <a href="https://www.solutudo.com.br/" aria-label="Solutudo — página inicial" style="flex:0 0 auto;display:flex;align-items:center;padding-right:clamp(10px,2vw,24px)">
+      <img class="tb-logo" src="assets/logo-solutudo.png" alt="Solutudo" style="width:auto;display:block">
+    </a>
+
+    <!-- busca: mobile (inline, centralizada, lupa no lugar do "Buscar") -->
+    <form class="tb-mobinline" role="search" onsubmit="return false" style="flex:1 1 auto;min-width:0;align-self:center;align-items:center;gap:4px;background:var(--gray-100);border:1px solid var(--gray-200);border-radius:var(--radius-pill);padding:6px 5px 6px 14px;margin:0 6px">
+      <input type="text" placeholder="Buscar" aria-label="Buscar empresas ou categorias" style="flex:1;min-width:0;border:0;outline:0;font-size:15px;color:var(--ink);background:transparent;letter-spacing:-0.01em">
+      <button type="submit" aria-label="Buscar" style="flex:0 0 auto;display:flex;align-items:center;justify-content:center;width:34px;height:34px;border:0;border-radius:50%;background:#fff;color:var(--brand-purple);cursor:pointer;padding:0">
+        <svg viewBox="0 0 24 24" fill="none" style="width:19px;height:19px"><circle cx="11" cy="11" r="7" stroke="#A701FD" stroke-width="2"/><path d="m20 20-3.2-3.2" stroke="#A701FD" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </form>
+
+    <!-- busca: desktop (linha reta, sem pílula) + seletor de cidade embutido -->
+    <form class="tb-desk" role="search" onsubmit="return false" style="flex:1 1 auto;min-width:0;max-width:640px;align-items:center;gap:12px;border-left:1px solid var(--gray-200);padding-left:clamp(14px,2vw,22px)">
+      <svg viewBox="0 0 24 24" fill="none" style="width:22px;height:22px;flex:0 0 auto"><circle cx="11" cy="11" r="7" stroke="#A701FD" stroke-width="2"/><path d="m20 20-3.2-3.2" stroke="#A701FD" stroke-width="2" stroke-linecap="round"/></svg>
+      <input type="text" placeholder="Buscar empresas ou categorias" aria-label="Buscar" style="flex:1;min-width:0;border:0;outline:0;font-size:16px;color:var(--ink);background:transparent;letter-spacing:-0.01em">
+      <button type="button" aria-label="Mudar cidade" style="align-self:stretch;flex:0 0 auto;display:inline-flex;align-items:center;gap:6px;background:none;border:0;cursor:pointer;font-family:var(--font-sans);font-weight:700;font-size:14.5px;color:var(--ink);letter-spacing:-0.01em;padding:0 4px 0 6px">
+        <svg viewBox="0 0 24 24" fill="none" style="width:17px;height:17px;flex:0 0 auto"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z" stroke="#A701FD" stroke-width="1.7" stroke-linejoin="round"/><circle cx="12" cy="11" r="2.2" stroke="#A701FD" stroke-width="1.7"/></svg>
+        {{ cidade }}<sup style="font-size:10px;font-weight:700;color:var(--gray-500);margin-left:-2px">{{ uf }}</sup>
+        <svg viewBox="0 0 24 24" fill="none" style="width:15px;height:15px"><path d="m6 9 6 6 6-6" stroke="#9D9D9D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <button type="submit" style="align-self:center;flex:0 0 auto;display:flex;align-items:center;border:0;background:none;color:var(--brand-purple);font-weight:700;font-size:16px;font-family:var(--font-sans);cursor:pointer;padding:8px 14px;border-radius:var(--radius-pill);letter-spacing:-0.01em">Buscar</button>
+    </form>
+
+    <!-- atalhos -->
+    <nav class="tb-desk" aria-label="Atalhos" style="flex:0 0 auto;align-items:center;gap:clamp(16px,1.6vw,24px);border-left:1px solid var(--gray-200);padding:0 clamp(14px,1.6vw,22px)">
+      <a href="https://www.solutudo.com.br/empregos" style="display:inline-flex;align-items:center;gap:9px;font-weight:700;font-size:15.5px;color:var(--ink);letter-spacing:-0.01em">
+        <svg viewBox="0 0 24 24" fill="none" style="width:22px;height:22px"><rect x="3" y="7.5" width="18" height="12" rx="2.4" stroke="#20CCEF" stroke-width="1.9"/><path d="M8.5 7.5V6a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v1.5M3 12.5h18" stroke="#20CCEF" stroke-width="1.9" stroke-linecap="round"/></svg>Empregos</a>
+      <a href="https://www.solutudo.com.br/onibus" style="display:inline-flex;align-items:center;gap:9px;font-weight:700;font-size:15.5px;color:var(--ink);letter-spacing:-0.01em">
+        <svg viewBox="0 0 24 24" fill="none" style="width:22px;height:22px"><rect x="4" y="4" width="16" height="13" rx="2.4" stroke="#F4B923" stroke-width="1.9"/><path d="M4 11h16M8 17v2.2M16 17v2.2" stroke="#F4B923" stroke-width="1.9" stroke-linecap="round"/><circle cx="8" cy="14" r="1.1" fill="#F4B923"/><circle cx="16" cy="14" r="1.1" fill="#F4B923"/></svg>Ônibus</a>
+    </nav>
+
+    <!-- cadastrar empresa (CTA grátis, destaque gradiente) -->
+    <div class="tb-desk" style="flex:0 0 auto;margin-left:auto;align-items:center;padding:0 clamp(10px,1.2vw,16px)">
+      <a href="https://www.solutudo.com.br/cadastre-sua-empresa" style="display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--gray-200);padding:10px 18px;border-radius:var(--radius-pill);font-weight:700;font-size:14.5px;letter-spacing:-0.01em;color:var(--ink);box-shadow:var(--shadow-card);white-space:nowrap">
+        <svg viewBox="0 0 24 24" fill="none" style="width:18px;height:18px;flex:0 0 auto"><path d="M12 5v14M5 12h14" stroke="#A701FD" stroke-width="2.1" stroke-linecap="round"/></svg>
+        <span>Cadastrar empresa <span style="font-family:'Playfair Display',Georgia,serif;font-style:italic;font-weight:700;background:var(--grad-brand);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent">grátis</span></span>
+      </a>
+    </div>
+
+    <!-- área do empresário -->
+    <a class="tb-desk" href="https://www.solutudo.com.br/area-do-empresario" style="flex:0 0 auto;align-items:center;gap:10px;padding:0 clamp(10px,1.2vw,16px)">
+      <svg viewBox="0 0 24 24" fill="none" style="width:24px;height:24px;flex:0 0 auto"><path d="M4 9.5 5.2 5.4A2 2 0 0 1 7.1 4h9.8a2 2 0 0 1 1.9 1.4L20 9.5M4 9.5h16M4 9.5a2.2 2.2 0 0 0 4.4 0 2.2 2.2 0 0 0 4.4 0 2.2 2.2 0 0 0 4.4 0M5.5 11.6V19a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-7.4" stroke="#A701FD" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span style="display:flex;flex-direction:column;line-height:1.15">
+        <span style="font-size:11px;color:var(--gray-500);font-weight:500">Acessar</span>
+        <span style="font-size:14.5px;color:var(--ink);font-weight:700;letter-spacing:-0.01em">Área do Empresário</span>
+      </span>
+    </a>
+
+    <!-- hamburguer (sempre visível, desktop e mobile) -->
+    <button type="button" onClick="{{ toggleMenu }}" aria-label="Abrir menu" style="flex:0 0 auto;display:flex;align-items:center;justify-content:center;border:0;border-left:1px solid var(--gray-200);background:none;cursor:pointer;padding:0 clamp(16px,1.8vw,22px)">
+      <svg viewBox="0 0 24 24" fill="none" style="width:26px;height:26px"><path d="M4 7h16M4 12h16M4 17h16" stroke="var(--ink)" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+
+  <!-- menu dropdown (navegação; nunca esconde dado de conteúdo) -->
+  <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="border-top:1px solid var(--gray-200);background:#fff">
+      <div class="tb-wrap" style="display:grid;grid-template-columns:1fr;padding-top:6px;padding-bottom:10px">
+        <a href="https://www.solutudo.com.br/cadastre-sua-empresa" style="display:flex;align-items:center;gap:12px;padding:14px 4px;font-weight:700;font-size:16px;color:var(--brand-purple);border-bottom:1px solid var(--gray-100)">
+          <svg viewBox="0 0 24 24" fill="none" style="width:22px;height:22px"><path d="M12 5v14M5 12h14" stroke="#A701FD" stroke-width="2" stroke-linecap="round"/></svg>Cadastre sua empresa grátis</a>
+        <a href="https://www.solutudo.com.br/planos" style="display:flex;align-items:center;gap:12px;padding:14px 4px;font-weight:700;font-size:16px;color:var(--ink);border-bottom:1px solid var(--gray-100)">
+          <svg viewBox="0 0 24 24" fill="none" style="width:22px;height:22px"><path d="M4 7h16M4 12h16M4 17h10" stroke="#151515" stroke-width="1.9" stroke-linecap="round"/></svg>Planos e preços</a>
+        <a href="https://www.solutudo.com.br/empregos" style="display:flex;align-items:center;gap:12px;padding:14px 4px;font-weight:700;font-size:16px;color:var(--ink);border-bottom:1px solid var(--gray-100)">
+          <svg viewBox="0 0 24 24" fill="none" style="width:22px;height:22px"><rect x="3" y="7.5" width="18" height="12" rx="2.4" stroke="#20CCEF" stroke-width="1.9"/><path d="M8.5 7.5V6a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v1.5M3 12.5h18" stroke="#20CCEF" stroke-width="1.9" stroke-linecap="round"/></svg>Empregos</a>
+        <a href="https://www.solutudo.com.br/onibus" style="display:flex;align-items:center;gap:12px;padding:14px 4px;font-weight:700;font-size:16px;color:var(--ink);border-bottom:1px solid var(--gray-100)">
+          <svg viewBox="0 0 24 24" fill="none" style="width:22px;height:22px"><rect x="4" y="4" width="16" height="13" rx="2.4" stroke="#F4B923" stroke-width="1.9"/><path d="M4 11h16M8 17v2.2M16 17v2.2" stroke="#F4B923" stroke-width="1.9" stroke-linecap="round"/></svg>Ônibus</a>
+        <a href="https://www.solutudo.com.br/telefones-uteis" style="display:flex;align-items:center;gap:12px;padding:14px 4px;font-weight:700;font-size:16px;color:var(--ink);border-bottom:1px solid var(--gray-100)">
+          <svg viewBox="0 0 24 24" fill="none" style="width:22px;height:22px"><path d="M6.5 4h3l1.5 4-2 1.5a11 11 0 0 0 5 5l1.5-2 4 1.5v3a2 2 0 0 1-2.2 2A16 16 0 0 1 4.5 6.2 2 2 0 0 1 6.5 4z" stroke="#151515" stroke-width="1.7" stroke-linejoin="round"/></svg>Telefones úteis</a>
+        <a href="https://www.solutudo.com.br/area-do-empresario" style="display:flex;align-items:center;gap:12px;padding:14px 4px;font-weight:700;font-size:16px;color:var(--ink)">
+          <svg viewBox="0 0 24 24" fill="none" style="width:24px;height:24px"><path d="M4 9.5 5.2 5.4A2 2 0 0 1 7.1 4h9.8a2 2 0 0 1 1.9 1.4L20 9.5M4 9.5h16M5.5 11.6V19a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-7.4" stroke="#A701FD" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Área do Empresário</a>
+      </div>
+    </div>
+  </sc-if>
+</header>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;$preview&quot;: { &quot;width&quot;: 1440, &quot;height&quot;: 80 },
+  &quot;cidade&quot;: { &quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;Botucatu&quot;, &quot;tsType&quot;: &quot;string&quot; },
+  &quot;uf&quot;: { &quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;SP&quot;, &quot;tsType&quot;: &quot;string&quot; }
+}">
+class Component extends DCLogic {
+  state = { menuOpen: false };
+  renderVals() {
+    return {
+      cidade: this.props.cidade ?? 'Botucatu',
+      uf: this.props.uf ?? 'SP',
+      force: this.props.force ?? '',
+      menuOpen: this.state.menuOpen,
+      toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen }))
+    };
+  }
+}
+</script>
+</body>
+</html>
