@@ -62,6 +62,48 @@ sessão, para não se gastar tempo redescobrindo:
 | Porto Certo Consórcio (segmento regulado) | 44 → 91 | 7 itens | 6 |
 | **EA3 Engenharia** | **31 → 92** | **29 itens** | **7** |
 
+### 2.5 Cobertura da EA3 — corrige o roteiro
+
+**O roteiro hoje diz “Avaré e região”. Isso cobre menos da metade do que a
+empresa atende e precisa ser corrigido na etapa 2.**
+
+A EA3 atende **8 municípios**, distribuídos em **dois eixos que não se tocam**:
+
+| Eixo | Municípios |
+|---|---|
+| Campinas–Sorocaba | Vinhedo, Indaiatuba, Boituva |
+| Avaré | Avaré, Arandu, Itaí, Paranapanema, Águas de Santa Bárbara |
+
+Dentro do eixo de Avaré, a presença é por **condomínio nomeado**, não por
+cidade — são **5 condomínios Momentum**:
+
+| Condomínio | Cidade |
+|---|---|
+| Riviera de Santa Cristina I | Arandu, SP |
+| Riviera de Santa Cristina IV | Arandu, SP |
+| Riviera de Santa Cristina II | Itaí, SP |
+| Riviera de Santa Cristina XIII | Paranapanema, SP |
+| Santa Bárbara Resort Residence | Águas de Santa Bárbara, SP |
+
+Ou seja: quatro cidades de atuação declarada (Vinhedo, Indaiatuba, Boituva,
+Avaré) mais quatro cidades alcançadas pelos condomínios (Arandu, Itaí,
+Paranapanema, Águas de Santa Bárbara).
+
+#### Por que isso muda a campanha, não só o texto
+
+1. **“Avaré e região” apaga o eixo mais forte.** Vinhedo, Indaiatuba e Boituva
+   ficam de fora — e estão em outro eixo econômico do estado, com ticket e
+   perfil de obra diferentes dos condomínios.
+2. **Não existe raio único.** São duas manchas separadas no mapa: raio a partir
+   de Avaré não alcança Vinhedo, e raio a partir de Vinhedo não alcança nenhum
+   dos condomínios. A segmentação de Google e Meta tem que ser **por lista de
+   cidades**, ou dois conjuntos de campanha, nunca um raio só.
+3. **Os 5 condomínios são nome próprio — e nome próprio é termo de busca.**
+   Liga direto no achado 4.2: quem vai construir ali procura
+   “Riviera de Santa Cristina”, não “engenheiro em Arandu”. Os nomes dos
+   condomínios devem entrar como grupo de anúncio próprio, do mesmo jeito que
+   as 43 buscas reais viraram os outros 5 grupos.
+
 ---
 
 ## 3. Gestão de Tráfego como produto
@@ -151,3 +193,5 @@ observação sobre um caso.
    proposta com preço.
 4. Decidir 3 e 4 (são de uma linha cada).
 5. Recuperar o conteúdo das pendências 5 e 6 nos documentos do `soluintel`.
+6. **Corrigir o roteiro da EA3**, que hoje diz “Avaré e região”, usando a
+   cobertura real da §2.5 — e refazer a segmentação geográfica em cima dela.
