@@ -361,3 +361,53 @@ a contradição mais fácil de corrigir. O `Logo: null` com logo presente em Fot
 é provável falha de vínculo, não ausência de arquivo. E horário comercial de
 domingo e feriado, para fornecedor de material de construção, é quase certamente
 valor não verificado — mesma família de problema da data de fundação.
+
+---
+
+## 8. Seletor de parceiros — bloco novo para o hub
+
+Arquivo: **`docs/seletor-parceiros.html`** (neste repositório, pronto para portar).
+
+Substitui a grade de 3 cards do hub
+(`artefatos/parceiros/` no `soluintel`), que não escala. Resolve os três
+pedidos de uma vez:
+
+1. **A Blocok entra na lista** — e entra com estado próprio, `Bloqueada`, não
+   como “central completa”, porque ela não tem central.
+2. **Header persistente.** Barra fixa no topo com todos os parceiros, visível
+   também dentro de uma central. Ponto verde = central completa, ponto vermelho
+   = bloqueada.
+3. **Voltar.** Botão “← Todos os parceiros” dentro da central, e o histórico do
+   navegador funciona porque a rota é por hash (`#/ea3`).
+
+### Por que virou lista e não card
+
+Card tem ~350 px de altura. Com 3 parceiros cabe numa linha; com 10 vira parede
+de rolagem. A lista mantém uma linha por parceiro com logo, nome, estado,
+segmento, cidade, ID, o salto de score e as etiquetas — e ganha **busca** (nome,
+segmento, cidade ou ID) e **filtro por estado**.
+
+### Como adicionar o parceiro seguinte
+
+Um objeto no array `PARCEIROS`, no topo do `<script>`. Nada mais. Os campos:
+
+| Campo | Para que serve |
+|---|---|
+| `slug` | vira a rota `#/slug` |
+| `curto` | nome curto que aparece no header |
+| `sigla`, `cor` | o quadrado colorido no lugar do logo |
+| `estado` | `completa` ou `bloqueada` — define pill, ponto e filtro |
+| `antes`, `depois` | o salto de score; `depois: null` desenha “sem central” |
+| `href` | **URL da central real** — hoje vazio, ver abaixo |
+| `stats`, `resumo`, `tags` | o que aparece na linha e no dossiê |
+
+### Pendência do porte
+
+O campo **`href` está vazio nos quatro** porque esta sessão não alcança o
+`soluintel` — não deu para ler as URLs reais das centrais. Ao portar, preencher
+os quatro `href` e o botão “Abrir central completa” passa a apontar para a
+página real; enquanto estiver vazio, o clique abre o resumo interno.
+
+Também vale conferir, no porte, se o prefixo de classe `sp-` colide com algo do
+CSS atual do hub — foi escolhido justamente para não colidir, mas eu não pude
+ver o arquivo para confirmar.

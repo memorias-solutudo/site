@@ -1,0 +1,817 @@
+<title>Seletor de Parceiros</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+
+<style>
+:root {
+  --sp-bg:        #F7F5FA;
+  --sp-surface:   #FFFFFF;
+  --sp-surface-2: #F2EFF7;
+  --sp-ink:       #17172B;
+  --sp-ink-2:     #4A4863;
+  --sp-ink-3:     #77748C;
+  --sp-rule:      #E9E4F2;
+  --sp-rule-2:    #D6CEE6;
+  --sp-brand:     #7C3AED;
+  --sp-brand-ink: #6D28D9;
+  --sp-brand-soft:#F0E9FE;
+  --sp-grad:      linear-gradient(97deg, #EC4899 0%, #A855F7 100%);
+  --sp-ok:        #15803D;
+  --sp-ok-soft:   #E4F6EA;
+  --sp-warn:      #B45309;
+  --sp-warn-soft: #FBEEDB;
+  --sp-stop:      #C42B22;
+  --sp-stop-soft: #FCE9E6;
+  --sp-shadow:    0 1px 2px rgba(23,23,43,.04), 0 10px 30px -18px rgba(23,23,43,.30);
+
+  --sp-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --sp-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --sp-bg:        #131120;
+    --sp-surface:   #1B1930;
+    --sp-surface-2: #232041;
+    --sp-ink:       #EDEBF5;
+    --sp-ink-2:     #BEBAD2;
+    --sp-ink-3:     #918DA8;
+    --sp-rule:      #2C2947;
+    --sp-rule-2:    #3D3960;
+    --sp-brand:     #A78BFA;
+    --sp-brand-ink: #C4B5FD;
+    --sp-brand-soft:#2A2151;
+    --sp-ok:        #5FD08A;
+    --sp-ok-soft:   #16301F;
+    --sp-warn:      #E0A758;
+    --sp-warn-soft: #33260F;
+    --sp-stop:      #F08C80;
+    --sp-stop-soft: #361B18;
+    --sp-shadow:    0 1px 2px rgba(0,0,0,.35), 0 10px 30px -18px rgba(0,0,0,.7);
+  }
+}
+:root[data-theme="dark"] {
+  --sp-bg:        #131120;
+  --sp-surface:   #1B1930;
+  --sp-surface-2: #232041;
+  --sp-ink:       #EDEBF5;
+  --sp-ink-2:     #BEBAD2;
+  --sp-ink-3:     #918DA8;
+  --sp-rule:      #2C2947;
+  --sp-rule-2:    #3D3960;
+  --sp-brand:     #A78BFA;
+  --sp-brand-ink: #C4B5FD;
+  --sp-brand-soft:#2A2151;
+  --sp-ok:        #5FD08A;
+  --sp-ok-soft:   #16301F;
+  --sp-warn:      #E0A758;
+  --sp-warn-soft: #33260F;
+  --sp-stop:      #F08C80;
+  --sp-stop-soft: #361B18;
+  --sp-shadow:    0 1px 2px rgba(0,0,0,.35), 0 10px 30px -18px rgba(0,0,0,.7);
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--sp-bg);
+  color: var(--sp-ink);
+  font-family: var(--sp-sans);
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+:focus-visible { outline: 2px solid var(--sp-brand); outline-offset: 2px; border-radius: 6px; }
+
+/* ============ HEADER PERSISTENTE ============ */
+.sp-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: color-mix(in srgb, var(--sp-bg) 88%, transparent);
+  backdrop-filter: saturate(1.6) blur(12px);
+  border-bottom: 1px solid var(--sp-rule);
+}
+.sp-header__in {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 11px 24px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.sp-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-weight: 800;
+  font-size: 14.5px;
+  letter-spacing: -.015em;
+  color: var(--sp-ink);
+  text-decoration: none;
+  flex: none;
+}
+.sp-brand__m {
+  width: 22px; height: 22px;
+  border-radius: 7px;
+  background: var(--sp-grad);
+  flex: none;
+}
+.sp-nav {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  padding: 3px 0;
+  min-width: 0;
+  flex: 1;
+}
+.sp-nav::-webkit-scrollbar { height: 4px; }
+.sp-nav::-webkit-scrollbar-thumb { background: var(--sp-rule-2); border-radius: 4px; }
+.sp-nav__b {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background: none;
+  font: inherit;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--sp-ink-2);
+  cursor: pointer;
+  white-space: nowrap;
+  text-decoration: none;
+}
+.sp-nav__b:hover { background: var(--sp-surface); border-color: var(--sp-rule); color: var(--sp-ink); }
+.sp-nav__b[aria-current="page"] {
+  background: var(--sp-brand-soft);
+  border-color: color-mix(in srgb, var(--sp-brand) 32%, transparent);
+  color: var(--sp-brand-ink);
+}
+.sp-nav__b .dot { width: 6px; height: 6px; border-radius: 50%; flex: none; }
+.dot--ok { background: var(--sp-ok); }
+.dot--stop { background: var(--sp-stop); }
+.sp-nav__sep { width: 1px; height: 20px; background: var(--sp-rule); flex: none; }
+.sp-nav__all { font-weight: 700; }
+
+/* ============ CANVAS ============ */
+.sp-wrap { max-width: 1240px; margin: 0 auto; padding: 0 24px 88px; }
+.sp-view[hidden] { display: none !important; }
+
+.sp-head { text-align: center; padding: 44px 0 28px; }
+.sp-eyebrow {
+  display: inline-block;
+  font-family: var(--sp-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--sp-brand-ink);
+  background: var(--sp-brand-soft);
+  padding: 6px 14px;
+  border-radius: 999px;
+  margin: 0 0 18px;
+}
+.sp-h1 {
+  font-size: clamp(1.9rem, 4.4vw, 2.5rem);
+  font-weight: 800;
+  letter-spacing: -.028em;
+  line-height: 1.1;
+  margin: 0 0 14px;
+  text-wrap: balance;
+}
+.sp-lede {
+  max-width: 62ch;
+  margin: 0 auto;
+  color: var(--sp-ink-2);
+  font-size: 15.5px;
+  text-wrap: pretty;
+}
+
+/* ============ FILTROS ============ */
+.sp-tools {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin: 6px 0 18px;
+}
+.sp-search {
+  position: relative;
+  flex: 1 1 260px;
+  min-width: 0;
+}
+.sp-search input {
+  width: 100%;
+  font: inherit;
+  font-size: 14.5px;
+  color: var(--sp-ink);
+  background: var(--sp-surface);
+  border: 1px solid var(--sp-rule);
+  border-radius: 10px;
+  padding: 10px 14px 10px 38px;
+}
+.sp-search input::placeholder { color: var(--sp-ink-3); }
+.sp-search svg { position: absolute; left: 13px; top: 50%; transform: translateY(-50%); color: var(--sp-ink-3); }
+.sp-chips { display: flex; flex-wrap: wrap; gap: 7px; }
+.sp-chip {
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--sp-ink-2);
+  background: var(--sp-surface);
+  border: 1px solid var(--sp-rule);
+  border-radius: 999px;
+  padding: 7px 13px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.sp-chip:hover { border-color: var(--sp-rule-2); color: var(--sp-ink); }
+.sp-chip[aria-pressed="true"] {
+  background: var(--sp-brand-soft);
+  border-color: color-mix(in srgb, var(--sp-brand) 32%, transparent);
+  color: var(--sp-brand-ink);
+}
+.sp-chip .n { font-family: var(--sp-mono); font-size: 11.5px; opacity: .72; margin-left: 5px; }
+
+.sp-count {
+  font-family: var(--sp-mono);
+  font-size: 11.5px;
+  letter-spacing: .04em;
+  color: var(--sp-ink-3);
+  margin: 0 0 10px;
+}
+
+/* ============ LISTA DE PARCEIROS ============ */
+.sp-list {
+  background: var(--sp-surface);
+  border: 1px solid var(--sp-rule);
+  border-radius: 14px;
+  box-shadow: var(--sp-shadow);
+  overflow: hidden;
+}
+.sp-row {
+  display: grid;
+  grid-template-columns: 40px minmax(190px, 2.1fr) minmax(140px, 1.15fr) minmax(150px, 1.25fr) auto;
+  align-items: center;
+  gap: 18px;
+  width: 100%;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  border-top: 1px solid var(--sp-rule);
+  padding: 15px 20px;
+  cursor: pointer;
+}
+.sp-row:first-child { border-top: 0; }
+.sp-row:hover { background: var(--sp-surface-2); }
+.sp-row[hidden] { display: none !important; }
+
+.sp-logo {
+  width: 40px; height: 40px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  font-family: var(--sp-mono);
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  flex: none;
+  letter-spacing: -.02em;
+}
+.sp-id { min-width: 0; }
+.sp-name {
+  font-weight: 700;
+  font-size: 15.5px;
+  letter-spacing: -.012em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.sp-meta {
+  font-size: 12.5px;
+  color: var(--sp-ink-3);
+  font-family: var(--sp-mono);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.sp-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--sp-mono);
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.sp-pill--ok { background: var(--sp-ok-soft); color: var(--sp-ok); }
+.sp-pill--stop { background: var(--sp-stop-soft); color: var(--sp-stop); }
+.sp-pill--warn { background: var(--sp-warn-soft); color: var(--sp-warn); }
+
+.sp-delta { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.sp-delta__n {
+  font-family: var(--sp-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 13px;
+  color: var(--sp-ink-3);
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+}
+.sp-delta__n b { color: var(--sp-brand-ink); font-size: 15px; font-weight: 600; }
+.sp-delta__n .pend { color: var(--sp-stop); font-weight: 600; }
+.sp-bar { position: relative; height: 5px; background: var(--sp-surface-2); border-radius: 999px; }
+.sp-bar i { position: absolute; top: 0; bottom: 0; left: calc(var(--a) * 1%); width: calc((var(--b) - var(--a)) * 1%); background: var(--sp-grad); border-radius: 999px; }
+.sp-bar.is-pend i { background: var(--sp-stop); left: 0; width: calc(var(--a) * 1%); }
+
+.sp-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+.sp-tag {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--sp-ink-2);
+  background: var(--sp-surface-2);
+  border-radius: 6px;
+  padding: 3px 8px;
+  white-space: nowrap;
+}
+.sp-go {
+  font-family: var(--sp-mono);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--sp-brand-ink);
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.sp-row:hover .sp-go .arw { transform: translateX(3px); }
+.sp-go .arw { transition: transform .16s ease; }
+@media (prefers-reduced-motion: reduce) { .sp-go .arw { transition: none; } }
+
+@media (max-width: 900px) {
+  .sp-row { grid-template-columns: 40px 1fr auto; gap: 14px; row-gap: 12px; }
+  .sp-row > .sp-delta { grid-column: 2 / -1; }
+  .sp-row > .sp-tags { grid-column: 2 / -1; }
+}
+
+.sp-empty { padding: 44px 20px; text-align: center; color: var(--sp-ink-3); font-size: 14.5px; }
+.sp-empty[hidden] { display: none !important; }
+
+/* ============ CENTRAL ============ */
+.sp-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 26px 0 20px;
+  font-family: var(--sp-mono);
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--sp-ink-2);
+  background: var(--sp-surface);
+  border: 1px solid var(--sp-rule);
+  border-radius: 999px;
+  padding: 8px 15px 8px 12px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.sp-back:hover { border-color: var(--sp-rule-2); color: var(--sp-ink); }
+
+.sp-chead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--sp-rule);
+  margin-bottom: 26px;
+}
+.sp-chead .sp-logo { width: 52px; height: 52px; border-radius: 13px; font-size: 16px; }
+.sp-chead__t { min-width: 0; flex: 1 1 240px; }
+.sp-chead h2 { font-size: 1.6rem; font-weight: 800; letter-spacing: -.024em; margin: 0 0 5px; line-height: 1.15; }
+.sp-chead__m { font-family: var(--sp-mono); font-size: 12.5px; color: var(--sp-ink-3); }
+.sp-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--sp-grad);
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  border: 0;
+  border-radius: 999px;
+  padding: 11px 22px;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 6px 18px -8px rgba(168,85,247,.7);
+}
+.sp-cta:hover { filter: brightness(1.06); }
+
+.sp-panel {
+  background: var(--sp-surface);
+  border: 1px solid var(--sp-rule);
+  border-radius: 14px;
+  padding: 24px 26px;
+  box-shadow: var(--sp-shadow);
+  margin-bottom: 16px;
+}
+.sp-panel h3 {
+  font-size: .8rem;
+  font-family: var(--sp-mono);
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--sp-ink-3);
+  margin: 0 0 14px;
+}
+.sp-panel p { margin: 0 0 12px; max-width: 70ch; color: var(--sp-ink-2); }
+.sp-panel p:last-child { margin-bottom: 0; }
+.sp-panel strong { color: var(--sp-ink); font-weight: 700; }
+.sp-panel--stop { border-color: var(--sp-stop); background: var(--sp-stop-soft); }
+.sp-panel--stop h3 { color: var(--sp-stop); }
+.sp-panel--stop p { color: var(--sp-ink); }
+.sp-quote {
+  font-family: var(--sp-mono);
+  font-size: 1.16rem;
+  font-weight: 500;
+  color: var(--sp-ink);
+  margin: 0 0 14px !important;
+}
+
+.sp-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(112px, 1fr));
+  gap: 20px;
+  margin-top: 4px;
+}
+.sp-stat b {
+  display: block;
+  font-family: var(--sp-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 1.45rem;
+  font-weight: 600;
+  letter-spacing: -.03em;
+  line-height: 1.15;
+}
+.sp-stat span { font-size: 12.5px; color: var(--sp-ink-3); }
+
+.sp-kv { display: grid; gap: 1px; background: var(--sp-rule); border: 1px solid var(--sp-rule); border-radius: 10px; overflow: hidden; }
+.sp-kv div { background: var(--sp-surface); display: flex; flex-wrap: wrap; gap: 6px 18px; justify-content: space-between; padding: 11px 16px; font-size: 14px; }
+.sp-kv dt { color: var(--sp-ink-2); margin: 0; }
+.sp-kv dd { margin: 0; font-family: var(--sp-mono); font-size: 13px; text-align: right; }
+.sp-kv dd.bad { color: var(--sp-stop); }
+
+.sp-note {
+  font-size: 13.5px;
+  color: var(--sp-ink-3);
+  border-left: 2px solid var(--sp-rule-2);
+  padding-left: 14px;
+  margin-top: 4px;
+}
+
+.sp-foot {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid var(--sp-rule);
+  font-family: var(--sp-mono);
+  font-size: 11.5px;
+  color: var(--sp-ink-3);
+}
+</style>
+
+<header class="sp-header">
+  <div class="sp-header__in">
+    <a class="sp-brand" href="#/"><span class="sp-brand__m"></span>Parceiros</a>
+    <nav class="sp-nav" id="spNav" aria-label="Parceiros"></nav>
+  </div>
+</header>
+
+<div class="sp-wrap">
+
+  <!-- ============ HUB ============ -->
+  <section class="sp-view" id="viewHub">
+    <div class="sp-head">
+      <p class="sp-eyebrow">Parceiros · perfil completo dos canais</p>
+      <h1 class="sp-h1">Parceiros analisados</h1>
+      <p class="sp-lede">Cada parceiro tem uma central própria: um dossiê de fatos do cadastro e uma aba por produto contratado — Destaque, Solusite, Google, redes e calendário de conteúdo.</p>
+    </div>
+
+    <div class="sp-tools">
+      <label class="sp-search">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg>
+        <input type="search" id="spQ" placeholder="Buscar por nome, segmento, cidade ou ID" aria-label="Buscar parceiro">
+      </label>
+      <div class="sp-chips" id="spChips" role="group" aria-label="Filtrar por estado"></div>
+    </div>
+
+    <p class="sp-count" id="spCount"></p>
+    <div class="sp-list" id="spList"></div>
+    <p class="sp-empty" id="spEmpty" hidden>Nenhum parceiro corresponde a essa busca.</p>
+
+    <p class="sp-foot">A lista cresce por linha, não por card — cabe dezenas de parceiros sem virar parede. Adicionar um parceiro é acrescentar um objeto ao array <code>PARCEIROS</code>.</p>
+  </section>
+
+  <!-- ============ CENTRAL ============ -->
+  <section class="sp-view" id="viewCentral" hidden>
+    <a class="sp-back" href="#/"><span aria-hidden="true">←</span> Todos os parceiros</a>
+    <div id="spCentral"></div>
+  </section>
+
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  /* ---------------------------------------------------------------
+     Adicionar um parceiro = acrescentar um objeto aqui.
+     `href` é a URL da central real; quando vazio, abre o resumo interno.
+     --------------------------------------------------------------- */
+  var PARCEIROS = [
+    {
+      slug: "pizza-frita-semiao",
+      nome: "Pizza Frita Semião",
+      curto: "Pizza Frita",
+      sigla: "PF",
+      cor: "#D9403B",
+      segmento: "Pizzarias",
+      cidade: "Botucatu/SP",
+      id: "1737",
+      estado: "completa",
+      data: "12/08/2026",
+      antes: 40, depois: 92,
+      tags: ["Destaque", "GMB", "Solusite"],
+      abas: 6,
+      href: "",
+      stats: [["6", "itens no catálogo"], ["5", "correções de cadastro"], ["27", "imagens"], ["24", "temas de conteúdo"]],
+      resumo: "Descrição 3.0 auditada frase a frase, catálogo com 6 itens (2 cadastrados e 4 que a empresa entrega e não descreve), ficha do GMB, 7 blocos do site, bio e 3 posts fixados, e 24 temas de conteúdo por editoria."
+    },
+    {
+      slug: "porto-certo",
+      nome: "Porto Certo Consórcio",
+      curto: "Porto Certo",
+      sigla: "PC",
+      cor: "#1D4ED8",
+      segmento: "Consórcios",
+      cidade: "Araraquara/SP",
+      id: "27460312",
+      estado: "completa",
+      data: "12/08/2026",
+      antes: 44, depois: 91,
+      tags: ["Destaque", "GMB", "Solusite ativo", "Setor regulado"],
+      abas: 6,
+      href: "",
+      stats: [["7", "itens no catálogo"], ["7", "correções de cadastro"], ["14", "imagens"], ["24", "temas de conteúdo"]],
+      resumo: "Descrição em 1ª pessoa do consultor reescrita sem perder a autoridade pessoal, catálogo com 7 itens (5 cadastrados e 2 não descritos), ficha do GMB, 8 blocos do site, bio + headline de LinkedIn e 24 temas de conteúdo. Regra do setor aplicada em todo texto: nenhuma promessa de contemplação."
+    },
+    {
+      slug: "ea3",
+      nome: "EA3 Engenharia",
+      curto: "EA3",
+      sigla: "EA",
+      cor: "#0F766E",
+      segmento: "Construtoras",
+      cidade: "Avaré/SP",
+      id: "21651088",
+      estado: "completa",
+      data: "27/08/2026",
+      antes: 31, depois: 92,
+      tags: ["Destaque", "GMB", "Solusite", "Tráfego pago · Google"],
+      abas: 7,
+      href: "",
+      stats: [["29", "itens no catálogo"], ["12", "correções de cadastro"], ["55", "imagens"], ["43", "buscas reais"]],
+      resumo: "Cadastro rico e contaminado: 8 grafias do nome, duas cidades erradas em chamadas de ação e HTML de interface de chat colado dentro de um produto. Catálogo de 29 itens com 10 fichas completas, 24 temas e duas abas novas: tráfego pago (5 grupos de anúncio saídos das 43 buscas reais) e briefing (35 perguntas fixas para qualquer parceiro).",
+      extra: "cobertura"
+    },
+    {
+      slug: "blocok",
+      nome: "Blocok O Original",
+      curto: "Blocok",
+      sigla: "BK",
+      cor: "#57534E",
+      segmento: "Materiais para Construção",
+      cidade: "Sorocaba/SP",
+      id: "27112782",
+      estado: "bloqueada",
+      data: "31/08/2026",
+      antes: 13, depois: null,
+      tags: ["Força Digital Essencial", "Solusite", "Não pode utilizar IA"],
+      abas: 0,
+      href: "",
+      stats: [["3", "itens no catálogo"], ["104", "palavras-chave"], ["4", "categorias"], ["4", "cidades atendidas"]],
+      resumo: "Diagnóstico feito, central não produzida. O cadastro carrega anotação interna prioritária “Não pode utilizar IA”, que colide com a saída do pipeline empresa-3-0. Nada de descrição, editoria ou texto de anúncio foi gerado.",
+      extra: "blocok"
+    }
+  ];
+
+  var ESTADOS = {
+    completa:  { rotulo: "Central completa", pill: "sp-pill--ok",   dot: "dot--ok" },
+    bloqueada: { rotulo: "Bloqueada",        pill: "sp-pill--stop", dot: "dot--stop" }
+  };
+
+  var esc = function (v) {
+    return String(v == null ? "" : v)
+      .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+  };
+
+  var nav = document.getElementById("spNav");
+  var list = document.getElementById("spList");
+  var chips = document.getElementById("spChips");
+  var countEl = document.getElementById("spCount");
+  var emptyEl = document.getElementById("spEmpty");
+  var qEl = document.getElementById("spQ");
+  var viewHub = document.getElementById("viewHub");
+  var viewCentral = document.getElementById("viewCentral");
+  var centralEl = document.getElementById("spCentral");
+
+  var filtro = "todos";
+
+  /* ---------- header persistente ---------- */
+  function pintaNav() {
+    var atual = rotaAtual();
+    var html = '<a class="sp-nav__b sp-nav__all" href="#/"' + (atual ? "" : ' aria-current="page"') + ">Todos</a>";
+    html += '<span class="sp-nav__sep" aria-hidden="true"></span>';
+    PARCEIROS.forEach(function (p) {
+      var e = ESTADOS[p.estado];
+      html += '<a class="sp-nav__b" href="#/' + esc(p.slug) + '"' +
+              (atual === p.slug ? ' aria-current="page"' : "") + '>' +
+              '<span class="dot ' + e.dot + '" aria-hidden="true"></span>' + esc(p.curto) + "</a>";
+    });
+    nav.innerHTML = html;
+  }
+
+  /* ---------- filtros ---------- */
+  function pintaChips() {
+    var n = { todos: PARCEIROS.length, completa: 0, bloqueada: 0 };
+    PARCEIROS.forEach(function (p) { n[p.estado]++; });
+    var defs = [["todos", "Todos"], ["completa", "Central completa"], ["bloqueada", "Bloqueada"]];
+    chips.innerHTML = defs.map(function (d) {
+      return '<button type="button" class="sp-chip" data-f="' + d[0] + '" aria-pressed="' +
+             (filtro === d[0]) + '">' + esc(d[1]) + '<span class="n">' + n[d[0]] + "</span></button>";
+    }).join("");
+  }
+
+  /* ---------- lista ---------- */
+  function pintaLista() {
+    list.innerHTML = PARCEIROS.map(function (p) {
+      var e = ESTADOS[p.estado];
+      var pend = p.depois == null;
+      return '<button type="button" class="sp-row" data-slug="' + esc(p.slug) + '">' +
+        '<span class="sp-logo" style="background:' + esc(p.cor) + '">' + esc(p.sigla) + "</span>" +
+        '<span class="sp-id">' +
+          '<span class="sp-name">' + esc(p.nome) +
+            '<span class="sp-pill ' + e.pill + '">' + esc(e.rotulo) + "</span></span>" +
+          '<span class="sp-meta">' + esc(p.segmento) + " · " + esc(p.cidade) + " · ID " + esc(p.id) + "</span>" +
+        "</span>" +
+        '<span class="sp-delta">' +
+          '<span class="sp-delta__n">' + (pend
+            ? esc(p.antes) + ' <span class="pend">· sem central</span>'
+            : esc(p.antes) + " <span>→</span> <b>" + esc(p.depois) + "</b>") + "</span>" +
+          '<span class="sp-bar' + (pend ? " is-pend" : "") + '" style="--a:' + esc(p.antes) + ";--b:" + esc(pend ? p.antes : p.depois) + '"><i></i></span>' +
+        "</span>" +
+        '<span class="sp-tags">' + p.tags.map(function (t) {
+          return '<span class="sp-tag">' + esc(t) + "</span>";
+        }).join("") + "</span>" +
+        '<span class="sp-go">Abrir <span class="arw" aria-hidden="true">→</span></span>' +
+      "</button>";
+    }).join("");
+    aplicaFiltro();
+  }
+
+  function aplicaFiltro() {
+    var q = (qEl.value || "").trim().toLowerCase();
+    var vis = 0;
+    PARCEIROS.forEach(function (p, i) {
+      var row = list.children[i];
+      if (!row) { return; }
+      var casaTexto = !q || [p.nome, p.segmento, p.cidade, p.id].join(" ").toLowerCase().indexOf(q) !== -1;
+      var casaEstado = filtro === "todos" || p.estado === filtro;
+      var ok = casaTexto && casaEstado;
+      row.hidden = !ok;
+      if (ok) { vis++; }
+    });
+    emptyEl.hidden = vis > 0;
+    countEl.textContent = vis + (vis === 1 ? " parceiro" : " parceiros") +
+      (vis === PARCEIROS.length ? "" : " de " + PARCEIROS.length);
+  }
+
+  /* ---------- central ---------- */
+  var EXTRAS = {
+    cobertura:
+      '<div class="sp-panel"><h3>Cobertura real — corrige o roteiro</h3>' +
+      '<p>O roteiro diz <strong>“Avaré e região”</strong>. São <strong>8 municípios em dois eixos que não se tocam</strong>: Vinhedo, Indaiatuba e Boituva no eixo Campinas–Sorocaba; Avaré, Arandu, Itaí, Paranapanema e Águas de Santa Bárbara no eixo de Avaré.</p>' +
+      '<p>Não existe raio único que cubra os dois. A segmentação tem que ser por <strong>lista de cidades</strong>, ou dois conjuntos de campanha.</p>' +
+      '<p>São <strong>5 condomínios Momentum</strong> — Riviera de Santa Cristina I e IV (Arandu), II (Itaí), XIII (Paranapanema) e Santa Bárbara Resort Residence (Águas de Santa Bárbara). Nome de condomínio é termo de busca: merecem grupo de anúncio próprio.</p>' +
+      "</div>",
+    blocok:
+      '<div class="sp-panel sp-panel--stop"><h3>Bloqueio · resolver antes de qualquer coisa</h3>' +
+      '<p class="sp-quote">“Não pode utilizar IA”</p>' +
+      '<p>Anotação interna prioritária · tag Prioridade · João Pedro Cavassini · 10/08/2026.</p>' +
+      '<p>A pergunta a responder: a restrição vale para <strong>publicar conteúdo gerado no perfil do cliente</strong>, ou para <strong>usar IA em qualquer etapa</strong>, inclusive análise interna? São coisas diferentes, e mudam o que dá para entregar.</p>' +
+      "</div>" +
+      '<div class="sp-panel"><h3>O cadastro está posicionado na cidade errada</h3>' +
+      '<p>Tudo no cadastro aponta para <strong>Sorocaba</strong> — cidade na página de busca, endereço, descrição (3 menções), banners do Solusite. Mas o endereço é <strong>Av. Ipanema 5381, “BLOCO B; APT 14”</strong>: apartamento, onde o franqueado mora.</p>' +
+      '<p>A identidade aponta para o condomínio: a franquia se chama <strong>“Franquia Riviera”</strong>, o e-mail é blocok.riviera@gmail.com, o Instagram é @blocok.riviera, e os 3 produtos descrevem <strong>Ninho Verde II Eco Residence</strong>.</p>' +
+      '<p class="sp-note">Mesmo padrão da EA3, invertido: lá o texto apagava o eixo Campinas–Sorocaba; aqui o cadastro apaga o eixo do interior. Nos dois casos o material nomeia um eixo só — e é o errado.</p>' +
+      "</div>" +
+      '<div class="sp-panel"><h3>Três confirmações antes de subir campanha</h3>' +
+      '<p><strong>Itatinga</strong> aparece em duas palavras-chave e não na lista de cidades atendidas.</p>' +
+      '<p><strong>Pedras ornamentais:</strong> 10 termos de demanda e zero produtos no catálogo.</p>' +
+      '<p><strong>Sorocaba é mercado real ou só o endereço do dono?</strong> Decide a verba inteira.</p>' +
+      "</div>" +
+      '<div class="sp-panel"><h3>Higiene do cadastro — o que derruba a nota para 13</h3>' +
+      '<dl class="sp-kv">' +
+      '<div><dt>Palavras-chave</dt><dd class="bad">[""] vazia</dd></div>' +
+      '<div><dt>Palavras-chave estendidas</dt><dd class="bad">[""] vazia</dd></div>' +
+      '<div><dt>Nome fantasia / Vídeo</dt><dd class="bad">vazios</dd></div>' +
+      '<div><dt>Campo Logo</dt><dd class="bad">null, com logo em Fotos</dd></div>' +
+      '<div><dt>Preço dos 3 produtos</dt><dd class="bad">null nos três</dd></div>' +
+      '<div><dt>Horário</dt><dd class="bad">7 dias + feriado</dd></div>' +
+      '<div><dt>Ano de fundação</dt><dd class="bad">12/05/1999</dd></div>' +
+      "</dl></div>"
+  };
+
+  function pintaCentral(p) {
+    var e = ESTADOS[p.estado];
+    var h = '<div class="sp-chead">' +
+      '<span class="sp-logo" style="background:' + esc(p.cor) + '">' + esc(p.sigla) + "</span>" +
+      '<span class="sp-chead__t"><h2>' + esc(p.nome) + "</h2>" +
+      '<span class="sp-chead__m">' + esc(p.segmento) + " · " + esc(p.cidade) + " · ID " + esc(p.id) +
+      ' · <span class="sp-pill ' + e.pill + '">' + esc(e.rotulo) + " " + esc(p.data) + "</span></span></span>";
+    if (p.href) {
+      h += '<a class="sp-cta" href="' + esc(p.href) + '">Abrir central completa <span aria-hidden="true">→</span></a>';
+    }
+    h += "</div>";
+
+    h += '<div class="sp-panel"><h3>Dossiê</h3><p>' + esc(p.resumo) + "</p>" +
+         '<div class="sp-stats">' + p.stats.map(function (s) {
+           return '<span class="sp-stat"><b>' + esc(s[0]) + "</b><span>" + esc(s[1]) + "</span></span>";
+         }).join("") + "</div></div>";
+
+    if (p.extra && EXTRAS[p.extra]) { h += EXTRAS[p.extra]; }
+
+    if (p.abas > 0 && !p.href) {
+      h += '<p class="sp-foot">A central completa desta empresa tem ' + esc(p.abas) +
+           " abas e vive no artefato publicado. Preencha o campo <code>href</code> do parceiro para ligar o botão.</p>";
+    }
+    centralEl.innerHTML = h;
+  }
+
+  /* ---------- roteador ---------- */
+  function rotaAtual() {
+    var m = /^#\/([\w-]+)/.exec(window.location.hash || "");
+    return m ? m[1] : "";
+  }
+
+  function rota() {
+    var slug = rotaAtual();
+    var p = null;
+    for (var i = 0; i < PARCEIROS.length; i++) {
+      if (PARCEIROS[i].slug === slug) { p = PARCEIROS[i]; break; }
+    }
+    if (p) {
+      pintaCentral(p);
+      viewHub.hidden = true;
+      viewCentral.hidden = false;
+      document.title = p.nome + " · Parceiros";
+    } else {
+      viewCentral.hidden = true;
+      viewHub.hidden = false;
+      document.title = "Seletor de Parceiros";
+    }
+    pintaNav();
+    window.scrollTo({ top: 0, behavior: "auto" });
+  }
+
+  /* ---------- eventos ---------- */
+  list.addEventListener("click", function (ev) {
+    var row = ev.target.closest(".sp-row");
+    if (row) { window.location.hash = "#/" + row.dataset.slug; }
+  });
+  chips.addEventListener("click", function (ev) {
+    var b = ev.target.closest(".sp-chip");
+    if (!b) { return; }
+    filtro = b.dataset.f;
+    pintaChips();
+    aplicaFiltro();
+  });
+  qEl.addEventListener("input", aplicaFiltro);
+  window.addEventListener("hashchange", rota);
+
+  pintaChips();
+  pintaLista();
+  rota();
+})();
+</script>
