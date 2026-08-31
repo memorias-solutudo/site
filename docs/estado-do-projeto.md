@@ -177,10 +177,10 @@ observação sobre um caso.
 
 3. **Salvar ou não o prompt expandido de editorias** em
    `docs/editorias-conteudo.md`.
-4. **Remover ou não o branch do gatilho do `pages.yml`.**
-   Hoje ele dispara em `main` **e** no branch, com o mesmo grupo de
-   concorrência. É inofensivo enquanto os dois carregarem o mesmo commit — e
-   vira corrida no momento em que divergirem.
+4. ~~**Remover ou não o branch do gatilho do `pages.yml`.**~~
+   **Corrigido em 31/08/2026 — o diagnóstico da etapa 1 estava errado.**
+   Não é "inofensivo até divergirem", e não é uma corrida: o gatilho do branch
+   **nunca funcionou**. Ver §9.
 
 ### Registradas nos documentos do `soluintel`
 
@@ -411,3 +411,47 @@ página real; enquanto estiver vazio, o clique abre o resumo interno.
 Também vale conferir, no porte, se o prefixo de classe `sp-` colide com algo do
 CSS atual do hub — foi escolhido justamente para não colidir, mas eu não pude
 ver o arquivo para confirmar.
+
+---
+
+## 9. O gatilho do `pages.yml` no branch nunca publicou
+
+Corrige a pendência 4, que a etapa 1 registrou como risco latente. Não é
+latente: **é uma falha permanente, e ela esconde trabalho publicado.**
+
+### O que o histórico mostra
+
+Nas 98 execuções do workflow no branch `claude/intelligent-gates-av5c7o`,
+**nenhuma terminou em sucesso** — todas são `cancelled` ou `failure`. No `main`,
+todas as execuções do mesmo workflow terminam em `success`.
+
+A execução do meu push (nº 222, commit `9474731`) **falhou em 1 segundo** —
+começou 01:58:05 e terminou 01:58:06. Não é falha de build: nesse tempo o job
+não chegou a fazer checkout. É rejeição no portão do ambiente.
+
+### A causa
+
+O `pages.yml` dispara em `main` **e** no branch, mas o ambiente `github-pages`
+só aceita deploy do branch padrão. Todo push no branch falha imediatamente na
+etapa de ambiente, antes de rodar qualquer coisa.
+
+O `cancel-in-progress` do grupo `pages` explica o resto: quando os dois branches
+recebiam o mesmo commit, uma execução cancelava a outra — daí a alternância
+entre `cancelled` e `failure`.
+
+### A consequência que importa
+
+**O site publicado sempre refletiu apenas o `main`.** Todo commit que chegou ao
+ar foi empurrado para `main` direto. Enquanto branch e `main` carregavam o mesmo
+commit, isso passou despercebido.
+
+Agora eles divergiram: `main` está em `fd08baa` e o branch em `9474731`. **O
+trabalho do seletor de parceiros está commitado e pushado, mas não está no ar.**
+
+### Duas correções, independentes
+
+1. **Para publicar o que já está pronto:** levar `9474731` para o `main`.
+2. **Para não repetir:** tirar `claude/intelligent-gates-av5c7o` da lista de
+   `branches` do `pages.yml`. Ele só produz execução vermelha. Se a intenção é
+   pré-visualizar branch, o caminho é outro — ambiente separado ou deploy de
+   preview —, não o mesmo ambiente `github-pages`.
