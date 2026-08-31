@@ -401,16 +401,23 @@ Um objeto no array `PARCEIROS`, no topo do `<script>`. Nada mais. Os campos:
 | `href` | **URL da central real** — hoje vazio, ver abaixo |
 | `stats`, `resumo`, `tags` | o que aparece na linha e no dossiê |
 
-### Pendência do porte
+### Status: superado pelo porte real
 
-O campo **`href` está vazio nos quatro** porque esta sessão não alcança o
-`soluintel` — não deu para ler as URLs reais das centrais. Ao portar, preencher
-os quatro `href` e o botão “Abrir central completa” passa a apontar para a
-página real; enquanto estiver vazio, o clique abre o resumo interno.
+Este arquivo foi um plano B, escrito quando esta sessão ainda não alcançava o
+`soluintel`. O acesso foi liberado depois, e **a mudança foi feita direto no hub
+real** (`artefatos/parceiros/`), respeitando o design system que já existia lá —
+DM Sans, os tokens de marca, os estados `.pcard.wait` e `.st.wait` que o CSS já
+previa. O que foi ao ar:
 
-Também vale conferir, no porte, se o prefixo de classe `sp-` colide com algo do
-CSS atual do hub — foi escolhido justamente para não colidir, mas eu não pude
-ver o arquivo para confirmar.
+- `artefatos/parceiros/parceiros.js` — seletor compartilhado, fonte única da
+  lista. Adicionar parceiro = um objeto no array `PARCEIROS`.
+- `artefatos/parceiros/blocok-o-original/` — página de diagnóstico, sem
+  conteúdo gerado, por causa da nota da §7.
+- Hub com busca, filtro por estado com contagem, o card da Blocok e grade mais
+  densa.
+- Voltar explícito e seletor no topo nas quatro páginas.
+
+`docs/seletor-parceiros.html` fica como referência da alternativa considerada.
 
 ---
 
@@ -448,10 +455,13 @@ commit, isso passou despercebido.
 Agora eles divergiram: `main` está em `fd08baa` e o branch em `9474731`. **O
 trabalho do seletor de parceiros está commitado e pushado, mas não está no ar.**
 
-### Duas correções, independentes
+### Resolvido em 31/08/2026
 
-1. **Para publicar o que já está pronto:** levar `9474731` para o `main`.
-2. **Para não repetir:** tirar `claude/intelligent-gates-av5c7o` da lista de
-   `branches` do `pages.yml`. Ele só produz execução vermelha. Se a intenção é
-   pré-visualizar branch, o caminho é outro — ambiente separado ou deploy de
-   preview —, não o mesmo ambiente `github-pages`.
+1. **Publicado.** `4645af3` foi para o `main`; execução nº 223 terminou em
+   `success`. O hub novo está no ar.
+2. **Gatilho corrigido.** `claude/intelligent-gates-av5c7o` saiu da lista de
+   `branches` do `pages.yml`. O deploy passa a rodar só no `main`, que é o
+   único que funciona.
+
+Se um dia a intenção for pré-visualizar branch, o caminho é outro — ambiente
+separado ou deploy de preview —, nunca o mesmo ambiente `github-pages`.
