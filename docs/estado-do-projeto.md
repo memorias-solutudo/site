@@ -207,18 +207,27 @@ observação sobre um caso.
 
 ---
 
-## 7. Blocok O Original — quarta empresa, entrada da etapa 2
+## 7. Blocok O Original — quarta empresa
 
-### ⚠️ Bloqueio antes de qualquer coisa: nota interna “Não pode utilizar IA”
+> **Atualizado em 31/08/2026: a central foi produzida e publicada.**
+> `artefatos/parceiros/blocok-o-original/` no `soluintel`, no mesmo formato das
+> outras — 6 abas, descrição **13 → 91** (o maior salto da série), catálogo de 7
+> itens e 24 temas. A nota interna abaixo **não foi revogada**: a central saiu
+> por decisão explícita do responsável, e o alcance da restrição continua
+> pendente de confirmação com o CS antes de qualquer texto ir aos canais do
+> cliente. O diagnóstico que segue é o que orientou a produção.
+
+### ⚠️ A nota interna “Não pode utilizar IA”
 
 O cadastro carrega uma **anotação interna prioritária** (tag `Prioridade`,
 `Nota prioritária: true`), criada em **10/08/2026 por João Pedro Cavassini**,
 com o texto: **“Não pode utilizar IA”**.
 
 Isso colide de frente com o pipeline `empresa-3-0`, cuja saída é justamente
-conteúdo gerado. **Nada de descrição, editoria ou texto de anúncio deve ser
-gerado para essa empresa até que essa nota seja esclarecida.** O que segue
-abaixo é leitura do dado que já existe no cadastro — diagnóstico, não geração.
+conteúdo gerado. A restrição foi levantada duas vezes e o responsável decidiu
+seguir — a central existe. **A pendência que sobra é de publicação, não de
+produção:** nenhum texto da central deve ir para o perfil, o site ou as redes do
+cliente até o alcance da nota estar esclarecido.
 
 Precisa ser respondido antes de seguir: a restrição vale para **publicar
 conteúdo gerado no perfil do cliente**, ou para **usar IA em qualquer etapa**,
@@ -234,12 +243,37 @@ inclusive análise interna? São coisas diferentes e mudam o que dá para entreg
 | **Avaliação do perfil** | **13** — o mais baixo dos quatro parceiros |
 | Funcionários | 1 – 5 |
 | Patrocinador | Fábio *(telefone e e-mail do patrocinador em branco)* |
-| Catálogo | 3 produtos |
+| Catálogo | 3 produtos cadastrados → **7 itens** na central |
 | Categorias | 4 — Materiais para Construção *(padrão)*, Blocos de Cimento, Concretos, Tijolos Ecológicos |
 | Palavras-chave particulares | **104** |
 
 Para comparação: a EA3 partiu de 31 com 29 itens de catálogo. A Blocok parte de
 **13 com 3 itens** — é o pior ponto de partida da série, e o de maior espaço.
+A descrição fechou em **91**, ganho de 78 pontos.
+
+A nota 13 não vinha de texto mal escrito. Vinha de **texto de franqueadora
+publicado como se fosse da franquia**: sem território, sem contato e sem
+operação. A primeira frase do texto publicado é escrita na voz de quem
+*descobriu* o produto, não de quem o vende.
+
+### Três decisões que a central tomou e valem como regra
+
+1. **O Google vira empresa de área de atendimento, com endereço oculto.**
+   Publicar o apartamento é contra a política do Google, expõe a casa do
+   franqueado e ancora o perfil em Sorocaba — o mercado mais disputado e onde a
+   franquia não tem vantagem.
+2. **Nada de “desde 1999”** — a data do contrato é valor-padrão (§4.1).
+3. **Nada de “todos os dias”** — horário de sete dias mais feriado, para
+   fornecedor de material de construção, é valor não verificado. A central
+   publica só a faixa de horas.
+
+### Uma contradição técnica que trava conteúdo
+
+O produto 698701 chama de **“alta resistência estrutural”** um bloco que o
+próprio texto descreve como **“de vedação”**. Bloco de vedação não sustenta
+carga. Enquanto a franqueadora não confirmar se existe uma linha estrutural
+separada, nenhuma afirmação sobre carga entra em canal nenhum — e duas perguntas
+do FAQ ficam declaradamente sem resposta, por falta da medida nominal do bloco.
 
 ### 7.2 Cobertura
 
