@@ -634,6 +634,19 @@ não tratamento de rodapé. Na prática, o que a aba Conteúdo precisa entregar:
 5. **Distribuir por canal segundo o público**, não por hábito. Quando o cadastro
    ou a reunião disser onde o público está, a distribuição segue — a arquitetura
    dos 6 slots não muda.
+6. **Cruzar datas comemorativas com o negócio, quando fizerem sentido para o
+   segmento.** Formalizado em 08/09/2026 na §4.1 de `docs/editorias-conteudo.md`.
+   A regra: *a data não é o assunto, a data é o gancho*. No máximo **2 datas
+   viram tema**, preferencialmente no slot E; as demais viram **âncora de
+   publicação** de temas já existentes, sem criar o tema 25. Data sem fato para
+   cruzar não entra; data não verificável entra como "confirmar com o parceiro";
+   e as descartadas ficam listadas com o motivo.
+
+   No LAAE o segmento é dono de três datas — 22/03 (Água), 05/06 (Meio Ambiente)
+   e 19/11 (saneamento) —, e a justificativa veio do próprio cliente: ele já
+   tinha reclamado do fornecedor atual querendo postar conteúdo de São João,
+   *"para São João em Minas, São João em outros estados, isso aqui não tem
+   nada"*.
 
 Referência: `docs/editorias-conteudo.md`. Primeiro caso aplicado com esse rigor:
 a central do LAAE.
