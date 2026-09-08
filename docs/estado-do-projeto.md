@@ -134,7 +134,7 @@ para qualquer empresa da base.
 
 ### 4.1 A data 12/05/1999
 
-**Aparece idêntica nos quatro parceiros** — segmentos diferentes, cidades
+**Aparece idêntica nos cinco parceiros** — segmentos diferentes, cidades
 diferentes. É valor-padrão de formulário, não fato.
 
 Isso deixou de ser coincidência e virou **achado de sistema**: vale medir
@@ -146,6 +146,13 @@ formulário é *“Em que ano a empresa foi fundada?”*, e o que ficou gravado 
 **data completa**, não um ano. O campo é um seletor de data respondendo a uma
 pergunta de ano, e o que sobra é o valor-padrão do seletor. Quatro em quatro
 parceiros — a taxa na base inteira provavelmente é alta.
+
+**Quinta ocorrência, no LAAE (§10) — e a primeira com o valor certo à vista.**
+Até aqui dava para dizer que o campo estava errado, não qual era o valor certo.
+No LAAE a empresa se contradiz dentro do próprio cadastro: o campo do contrato
+diz `12/05/1999`, a descrição publicada diz **"Fundado em 2003, em Montes
+Claros/MG"** e a transcrição da reunião confirma ("2003 o nascimento da
+empresa"). Duas fontes independentes contra o valor-padrão. **Cinco em cinco.**
 
 ### 4.2 As palavras-chave particulares são o ativo mais subestimado do cadastro
 
@@ -499,3 +506,134 @@ trabalho do seletor de parceiros está commitado e pushado, mas não está no ar
 
 Se um dia a intenção for pré-visualizar branch, o caminho é outro — ambiente
 separado ou deploy de preview —, nunca o mesmo ambiente `github-pages`.
+
+---
+
+## 10. LAAE Laboratório — quinta empresa
+
+Publicado em `artefatos/parceiros/laae-laboratorio/` no `soluintel`. Descrição
+**47 → 94**. Catálogo de 9 itens, 24 temas, 12 correções de cadastro.
+
+O cadastro não traz nota calculada (`Avaliação do perfil: null`) — a de 47 foi
+apurada pela régua de 6 dimensões. **É a melhor base factual da série** e ainda
+assim zera na dimensão de contato: não há um telefone, um WhatsApp ou um "como
+pedir" em parágrafo nenhum do texto publicado.
+
+### 10.1 O que este parceiro tem e nenhum outro tinha
+
+A **análise da transcrição da reunião comercial** anexada ao cadastro. Ela
+responde perguntas de briefing que normalmente ficam em aberto e muda a
+prioridade do conteúdo:
+
+| Fato | Consequência |
+|---|---|
+| **99% do negócio é água e efluente**; solo é 1% | Nenhum tema de solo entra no calendário |
+| **130 tipos de exame** | Sustenta a série recorrente por mais de dez anos |
+| **A amostra vale 24 horas** | Explica o raio de ~600 km, a coleta própria e os 80–90% de mercado regional |
+| Contrato de 20–30% do faturamento **deve cair em ~6 meses** | O conteúdo ataca aquisição, não marca |
+| **"Meu público não está no Instagram"** (literal) | O calendário sai do feed — ver 10.4 |
+| Perfil do Google com reclamações antigas, e a empresa **mudou de sede e telefonia** | Responder as avaliações com o fato novo é ação de reputação, não desculpa |
+
+### 10.2 Achado novo, e mensurável na base inteira
+
+**Três dos quatro produtos têm texto colado de tradutor automático.** O corpo
+inteiro vem envolvido em `<font dir="auto" style="vertical-align: inherit;">`,
+em pares aninhados — o markup que o tradutor do navegador injeta no DOM. Alguém
+traduziu, copiou da tela e colou de volta no cadastro.
+
+O português voltou quebrado, e os erros são os que só a ida e volta produz:
+
+- *"Vantagens da **pesquisa** especializada"* — no produto de **amostragem**
+- *"empresas que **detectam** resultados confiáveis"* — por "buscam"
+- *"**Monitorização** das condições da água"* — português europeu
+- *"projetos de monitoramento que **desativam** avaliação de parâmetros"* — a
+  frase publicada não tem sentido
+- espaços de largura zero (`U+200B`) no meio das frases
+
+**Por que vale como achado de sistema:** a assinatura é detectável por código.
+Uma varredura por `font dir="auto"` e `vertical-align: inherit` nos campos de
+descrição diz, em uma consulta, **quantos dos 28 milhões de perfis têm texto
+colado de tradutor**. Mesma família do achado da data: um defeito invisível no
+caso a caso que aparece na medição.
+
+O produto 711409 é o único limpo — serve de controle: o problema não é o
+redator, é o caminho pelo qual o texto entrou.
+
+### 10.3 Segundo padrão: listas que parecem busca real e não são
+
+As **16 "palavras-chave particulares"** do LAAE estão em **ordem alfabética
+perfeita**, **14 das 16 terminam com ponto final**, e os erros são de digitação
+(`psicultura`, `pocos artesiano`), não de busca. Não são buscas capturadas: é
+lista digitada.
+
+Somando com a Blocok (§7), onde 11 dos 104 termos eram superlativos redigidos,
+já são **dois de cinco parceiros com o campo contaminado**. O campo mais valioso
+do cadastro — o que sustenta o achado 4.2 — também é o mais fácil de preencher à
+mão sem ninguém notar. **Vale a mesma medição:** quantos perfis têm listas
+alfabetadas ou com pontuação de item.
+
+Neste caso o slot F foi montado pela substituição prevista na §6 do padrão de
+editorias — `curated_keywords` da categoria e dúvidas clássicas do setor — e a
+lacuna ficou registrada na própria central.
+
+### 10.4 Uma decisão que contraria o manual e está certa
+
+O dono disse, com todas as letras: *"Meu público não está no Instagram. Meu
+público é muito direcionado."* Quem compra análise de água é responsável técnico
+de indústria, engenheiro ambiental, gestor de hospital — procura no Google
+quando precisa, não descobre laboratório rolando feed.
+
+Então os 24 temas foram produzidos uma vez e **redistribuídos por peso**: blog
+do site e perfil do Google como destino principal, FAQ em seguida, Instagram e
+Facebook em manutenção. **A arquitetura das 6 editorias não muda; a distribuição
+é que segue o público** — o que a §7 do padrão já previa ao listar destino
+múltiplo por editoria.
+
+### 10.5 Outros achados
+
+- **Três depoimentos nomeados** — SEAM Engenharia (cliente há 15 anos), Hospital
+  do Câncer do Norte de Minas e Tânia Botelho — guardados no campo
+  **"[Solusite] Ícones"**. Prova social real, invisível.
+- **`Solusite: false`** com **seis imagens de Solusite** cadastradas, com
+  legendas escritas. Ou foi montado e não marcado, ou cancelado com os ativos
+  sobrando.
+- **Duas categorias marcadas como padrão** e uma terceira ("Tratamento de Água")
+  classificando os produtos. Três classificações para a mesma empresa.
+- **11 imagens e nenhuma da operação** — nem bancada, nem coleta, nem equipe,
+  nem fachada. É o cadastro com menos imagens da série, e para um laboratório
+  acreditado é a lacuna mais cara.
+- **A janela de 24 horas** explica o negócio inteiro e não estava em texto
+  nenhum. Virou o **tema único** do calendário e o bloco 2 do site.
+- **Nenhum parâmetro de ensaio publicado** — 130 exames e nem pH, nem coliformes,
+  nem DBO aparecem. É a pendência número 1 para o CS: pedir o **escopo de
+  acreditação**. Sem ele, nada pode ser nomeado, porque publicar ensaio fora do
+  escopo é problema regulatório.
+- **O horário é o primeiro verossímil da série:** seg–sex, 8h–12h e 13h–17h,
+  fim de semana fechado. Serve de contraste com os "sete dias mais feriado" dos
+  outros parceiros.
+
+---
+
+## 11. Instrução permanente — editorias e temas
+
+**Definida em 08/09/2026. Vale para todas as empresas daqui em diante.**
+
+As editorias e seus temas passam a receber **atenção especial** em toda central,
+não tratamento de rodapé. Na prática, o que a aba Conteúdo precisa entregar:
+
+1. **Declarar o lastro antes dos temas.** Uma tabela por slot com os fatos do
+   cadastro que sustentam cada eixo e a contagem. Editoria com menos de 2 fatos
+   não existe — vira pendência de CS, e isso fica escrito.
+2. **Marcar o tema único e a série recorrente** explicitamente, com a
+   justificativa de por que aquele tema é impublicável por um concorrente.
+3. **Mostrar o que os quatro filtros descartaram**, não só o que passou. No LAAE
+   isso eliminou todo tema de solo (1% do negócio) e os três termos fora do
+   escopo declarado.
+4. **Registrar a substituição quando não há buscas reais**, com a ordem da §6 do
+   padrão e a lacuna nomeada como achado.
+5. **Distribuir por canal segundo o público**, não por hábito. Quando o cadastro
+   ou a reunião disser onde o público está, a distribuição segue — a arquitetura
+   dos 6 slots não muda.
+
+Referência: `docs/editorias-conteudo.md`. Primeiro caso aplicado com esse rigor:
+a central do LAAE.
