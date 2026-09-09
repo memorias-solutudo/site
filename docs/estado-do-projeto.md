@@ -668,5 +668,12 @@ não tratamento de rodapé. Na prática, o que a aba Conteúdo precisa entregar:
    *"para São João em Minas, São João em outros estados, isso aqui não tem
    nada"*.
 
+8. **Nome de editoria não pode contradizer os próprios temas.** O slot E leva o
+   nome do lugar só quando o território é um lugar só. Quando há rota, região
+   multi-cidade ou rede em expansão, ele leva o **nome do alcance**. No LAAE,
+   "Norte de Minas é aqui" brigava com o tema das franquias na Bahia e virou
+   **"Onde a gente chega"**. O teste é direto: *se um dos 4 temas contradiz o
+   nome da editoria, o nome está errado.*
+
 Referência: `docs/editorias-conteudo.md`. Primeiro caso aplicado com esse rigor:
 a central do LAAE.
