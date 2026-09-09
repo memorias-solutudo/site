@@ -642,6 +642,26 @@ não tratamento de rodapé. Na prática, o que a aba Conteúdo precisa entregar:
    cruzar não entra; data não verificável entra como "confirmar com o parceiro";
    e as descartadas ficam listadas com o motivo.
 
+7. **Cruzar o site oficial do parceiro com o dossiê**, dando funções
+   diferentes a cada fonte. O **dossiê manda na estratégia** — público, dor com
+   prazo, o que entra e o que não entra, território, prioridade, lógica das
+   datas. O **site manda no detalhe técnico** — como o processo é feito,
+   aplicações nomeadas, certificações, provas de autoridade. Quando as duas
+   discordam, vale a regra da casa: **conflito sai do texto e vira pendência
+   humana**, nunca escolha de lado.
+
+   No LAAE isso rendeu o achado de maior valor do caso — **água de hemodiálise**,
+   que não estava no cadastro nem na reunião — e resolveu uma pendência aberta:
+   os termos de alimentos, ar e resíduos que eu havia marcado como fora do
+   escopo são serviços reais do portfólio, só não são o foco comercial.
+   Também barrou "atuação em 11 estados", que é alcance de franqueadora e não
+   da unidade.
+
+   **Requisito de operação que isso expõe:** o pipeline precisa alcançar o site
+   do parceiro. Metade do detalhe técnico mora lá e não no cadastro, e hoje
+   `lablaae.com.br` não é alcançável deste ambiente — os fatos entraram por
+   leitura manual, com a procedência registrada na própria central.
+
    No LAAE o segmento é dono de três datas — 22/03 (Água), 05/06 (Meio Ambiente)
    e 19/11 (saneamento) —, e a justificativa veio do próprio cliente: ele já
    tinha reclamado do fornecedor atual querendo postar conteúdo de São João,
