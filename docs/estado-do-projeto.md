@@ -636,11 +636,19 @@ não tratamento de rodapé. Na prática, o que a aba Conteúdo precisa entregar:
    dos 6 slots não muda.
 6. **Cruzar datas comemorativas com o negócio, quando fizerem sentido para o
    segmento.** Formalizado em 08/09/2026 na §4.1 de `docs/editorias-conteudo.md`.
-   A regra: *a data não é o assunto, a data é o gancho*. No máximo **2 datas
-   viram tema**, preferencialmente no slot E; as demais viram **âncora de
-   publicação** de temas já existentes, sem criar o tema 25. Data sem fato para
-   cruzar não entra; data não verificável entra como "confirmar com o parceiro";
-   e as descartadas ficam listadas com o motivo.
+   A regra: *a data não é o assunto, a data é o gancho*. **Revisada em
+   10/09/2026:** não há teto — toda data que cruzar com um fato entra, e o que
+   existe é piso (havendo alguma que cruze, ela precisa aparecer). Procura-se em
+   cinco frentes: segmento, área de atuação, público, profissões e ciclo do
+   setor, e a própria empresa (aniversário e marcos redondos de 10, 15, 20, 25
+   anos, só com o ano de fundação confirmado por outra fonte). As datas não
+   ocupam editoria exclusiva: entram como abordagem eventual, por padrão no
+   slot D, no E quando a data é do lugar e no A quando é da própria empresa. As
+   demais viram **âncora de publicação** de temas já existentes, sem criar o
+   tema 25. Data sem fato para cruzar não entra; data não verificável entra
+   como "confirmar com o parceiro"; e as descartadas ficam listadas com o
+   motivo. Formato de entrega de cada editoria: Nome · Objetivo · CONTEÚDOS ·
+   ESSA EDITORIA RESPONDE (§4.2), tirado dos casos EA3 e Blocok.
 
 7. **Cruzar o site oficial do parceiro com o dossiê**, dando funções
    diferentes a cada fonte. O **dossiê manda na estratégia** — público, dor com
@@ -674,6 +682,39 @@ não tratamento de rodapé. Na prática, o que a aba Conteúdo precisa entregar:
    "Norte de Minas é aqui" brigava com o tema das franquias na Bahia e virou
    **"Onde a gente chega"**. O teste é direto: *se um dos 4 temas contradiz o
    nome da editoria, o nome está errado.*
+
+**Acrescentados em 10/09/2026, a partir do LAAE e valendo para os próximos:**
+
+9. **As três peças fixas do perfil saem junto com as editorias**, dos mesmos
+   fatos, e vão ao ar antes do primeiro tema do calendário. São: os **5
+   destaques do Instagram** (Sobre · Oferta · Diferencial · Prova social ·
+   Contato, reordenados se o segmento pedir — em venda técnica o Sobre vem
+   primeiro, em loja de consumo a oferta vem primeiro), cada um com título de
+   até ~11 caracteres, o que vai dentro, a capa e o porquê, mais as alternativas
+   descartadas; os **3 posts fixados** (1 a empresa · 2 o que oferece, com até 4
+   itens · 3 uma frase curta de CTA, descrição breve e os contatos principais),
+   cada um com **legenda, sugestão de imagem e texto na imagem** — e, quando a
+   foto não existe no cadastro, o caminho honesto enquanto não chega; e **uma
+   assinatura de rodapé** para toda imagem publicada, definida **em um único
+   lugar** e nunca repetida nas peças: frase no tom da empresa · WhatsApp
+   principal (dois só com duas linhas de atendimento) · terceiro elemento por
+   regra ("Cidade e Região" quando a empresa vai até o cliente; endereço só com
+   uma loja física; site só se atual e destino da conversão). Método na §4.3 de
+   `docs/editorias-conteudo.md`; no LAAE ficou *Fale com o laboratório ·
+   (38) 98405-5391 · Montes Claros e Região*, sem site (estacionado, palavra do
+   dono) e sem endereço (B2B, a coleta vai até o cliente).
+10. **A aba Conteúdo de cada central passa a ter menu lateral** com oito seções
+    numeradas: fontes e regra · editorias e temas · datas comemorativas ·
+    destaques · posts fixados · assinatura · filtros e como usar · o prompt. Os
+    fixados saem da aba Redes, que fica com a decisão de canal, a bio e um
+    ponteiro para o Conteúdo — para não existirem duas versões da mesma peça.
+11. **O prompt vigente (§8.1) fica colado na íntegra no fim da aba Conteúdo**,
+    com botão de copiar, gerado a partir do arquivo-fonte para que seja sempre o
+    mesmo texto. Quando o padrão mudar, a página é regenerada; não se edita o
+    prompt na página à mão.
+
+As centrais anteriores (Pizza Frita Semião, Porto Certo, EA3, Blocok) não são
+refeitas por causa dos itens 9 a 11 — a regra vale da LAAE em diante.
 
 Referência: `docs/editorias-conteudo.md`. Primeiro caso aplicado com esse rigor:
 a central do LAAE.
