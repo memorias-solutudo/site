@@ -712,9 +712,25 @@ não tratamento de rodapé. Na prática, o que a aba Conteúdo precisa entregar:
     com botão de copiar, gerado a partir do arquivo-fonte para que seja sempre o
     mesmo texto. Quando o padrão mudar, a página é regenerada; não se edita o
     prompt na página à mão.
+12. **Cidade em peça fixa é tudo ou nada** (definido em 11/09/2026). Empresa que
+    atende mais de uma cidade **nunca aparece presa a uma delas** nos destaques,
+    nos posts fixados, na bio ou na assinatura: ou a lista completa aparece (na
+    legenda do fixado 1, no fixado 3, no destaque de território, na área de
+    atendimento do Google), ou **nenhuma cidade aparece** e entra a sede
+    ("Sede em X", quando o endereço importa para o cliente) ou o alcance sem nome
+    de lugar. Atendimento nacional não cita cidade. Destacar uma praça continua
+    permitido **em tema de post** — é o que a série do slot E faz —, nunca em
+    peça fixa. O erro que a regra elimina: escolher "as duas ou três principais"
+    para caber num espaço curto, o que comunica que o resto não é atendido. Isso
+    **não vale** para a página de busca da Solutudo nem para o perfil do Google,
+    que são indexados por cidade. No LAAE a assinatura perdeu "Montes Claros e
+    Região" e ficou com duas partes (*Fale com o laboratório · (38) 98405-5391*),
+    a bio passou a dizer "coleta própria em nove cidades", o fixado 1 saiu de
+    "em Montes Claros" para "desde 2003, com coleta em nove cidades" e o fixado 3
+    ganhou a sede por extenso mais as nove cidades da rota.
 
 As centrais anteriores (Pizza Frita Semião, Porto Certo, EA3, Blocok) não são
-refeitas por causa dos itens 9 a 11 — a regra vale da LAAE em diante.
+refeitas por causa dos itens 9 a 12 — a regra vale da LAAE em diante.
 
 Referência: `docs/editorias-conteudo.md`. Primeiro caso aplicado com esse rigor:
 a central do LAAE.
