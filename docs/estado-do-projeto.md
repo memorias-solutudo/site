@@ -729,8 +729,27 @@ não tratamento de rodapé. Na prática, o que a aba Conteúdo precisa entregar:
     "em Montes Claros" para "desde 2003, com coleta em nove cidades" e o fixado 3
     ganhou a sede por extenso mais as nove cidades da rota.
 
+13. **Declaração de acesso às fontes, em evidência** (definida em 11/09/2026,
+    §1.1 de `docs/editorias-conteudo.md`). **Receber um link não é ter lido o
+    link.** Toda entrega abre com o inventário de tudo que foi enviado e de tudo
+    que o payload aponta — site, redes, catálogos, arquivos —, cada fonte com um
+    status: **LIDO**, **COLADO** (veio pela pessoa), **PARCIAL** ou **NÃO
+    ACESSADO**. Havendo qualquer não acessada, o aviso vem **em destaque, antes
+    das editorias**, nomeando cada fonte e dizendo o que isso muda, e se repete
+    no fim junto às pendências. Com fonte não lida é proibido escrever "segundo
+    o site", deduzir conteúdo pela URL ou descrever o estado atual de um perfil
+    que não foi visto — e é proibido ficar calado: o trabalho segue, com cada
+    peça dependente marcada como "depende de fonte não lida". Quando tudo foi
+    lido, o inventário aparece igual, todas em LIDO.
+
+    No LAAE isso expôs duas fontes que ninguém tinha declarado com esse peso:
+    `lablaae.com.br` (403 neste ambiente; o detalhe técnico veio de resumo
+    colado) e `instagram.com/lablaae` (nunca aberto — os 5 destaques são
+    recomendação a partir do cadastro, não reforma do que está no ar). As 11
+    imagens entraram como parciais: foram lidos os rótulos, não os arquivos.
+
 As centrais anteriores (Pizza Frita Semião, Porto Certo, EA3, Blocok) não são
-refeitas por causa dos itens 9 a 12 — a regra vale da LAAE em diante.
+refeitas por causa dos itens 9 a 13 — a regra vale da LAAE em diante.
 
 Referência: `docs/editorias-conteudo.md`. Primeiro caso aplicado com esse rigor:
 a central do LAAE.
