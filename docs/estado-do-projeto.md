@@ -784,6 +784,34 @@ não tratamento de rodapé. Na prática, o que a aba Conteúdo precisa entregar:
     está false e há seis imagens de Solusite no cadastro) e qual domínio ele
     usa, porque convivendo com o site atual são três vitrines com o mesmo texto.
 
+    **Revisão do mesmo dia, depois de quatro perguntas do cliente.** A primeira
+    versão não tinha recalculado as métricas da Descrição 3.0, não transformava
+    o catálogo em páginas, mantinha um FAQ diferente do da página Solutudo e
+    usava títulos genéricos. Agora, a partir de uma fonte única:
+    - **Métricas da 3.0 completas**, com a rubrica de seis dimensões em
+      critérios explícitos e visíveis, os limites de cada canal, a mesma
+      enumeração em todos os canais, os fatos usados com a fonte, as lacunas
+      com dono, os claims evitados e a necessidade de revisão humana. A rubrica
+      explícita pegou um erro antigo: a ficha de efluentes tinha 15 de 15 em
+      "entidade e local" sem citar o nome LAAE.
+    - **Um item do catálogo é uma página do site, e vice-versa.** As dez fichas
+      da aba Destaque viraram dez páginas com o mesmo texto; a água de
+      hemodiálise, que vem do site oficial, entrou no catálogo da Solutudo como
+      item condicionado.
+    - **FAQ idêntico nas duas vitrines** e perguntas próprias em cada página de
+      análise, só com fato.
+    - **Títulos úteis, nunca rótulos**: "Análises físico-químicas e
+      microbiológicas de água e efluentes" no lugar de "O que analisamos", e o
+      mesmo para toda página e todo bloco.
+    - **O formato Solusite bloco a bloco** (o que replica a página Solutudo e o
+      que é só do site) e **nove recomendações além do Destaque**, com
+      prioridade e dono: área do cliente, pedido guiado, acreditação com prova,
+      guia, link de WhatsApp rastreável, depoimentos, fotos, franquias e
+      página por cidade.
+    O perfil do Google e a bio passaram a usar a mesma enumeração; a bio diz
+    "serviços acreditados", com a ressalva do escopo. As regras entraram em
+    `docs/solusite-padrao.md`, §3, §4.1 a §4.3 e na especificação de bolso.
+
 As centrais anteriores (Pizza Frita Semião, Porto Certo, EA3, Blocok) não são
 refeitas por causa dos itens 9 a 14 — a regra vale da LAAE em diante.
 
