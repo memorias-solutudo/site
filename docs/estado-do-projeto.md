@@ -748,8 +748,44 @@ não tratamento de rodapé. Na prática, o que a aba Conteúdo precisa entregar:
     recomendação a partir do cadastro, não reforma do que está no ar). As 11
     imagens entraram como parciais: foram lidos os rótulos, não os arquivos.
 
+14. **Padrão do Solusite: um conteúdo, duas vitrines** (definido em 29/09/2026,
+    `docs/solusite-padrao.md` no soluintel). O texto recomendado para o site é
+    **o mesmo** dos detalhes da empresa na página Solutudo — mesmos fatos,
+    mesmas frases, mesma ordem; muda só a forma do contato (texto na Solutudo,
+    botão com link no site). Isso resolve a pendência que a Descrição 3.0 deixou
+    aberta, que era a "narrativa própria". O custo conhecido: texto idêntico em
+    dois domínios faz o buscador mostrar um deles para aquela busca. A mitigação
+    é estrutural: o site é sempre **maior** que a página, com uma página por
+    serviço, coleta, perguntas e blog, e cada domínio aponta o canonical para si.
+
+    A aba Solusite de cada central passa a ter menu lateral com oito seções: o
+    que esperamos (com o diagnóstico das centrais) · o conteúdo, frase a frase,
+    com a fonte de cada uma · páginas do site com URL, H1, title e meta contados
+    · perguntas com resposta na primeira frase (AEO) · frases citáveis por IA e o
+    que cada bloco faz por SEO, AEO e GEO · camada técnica com o JSON-LD, o
+    robots.txt, os Core Web Vitals e o frescor · o que falta para publicar ·
+    a especificação para quem monta, com botão de copiar.
+
+    Diagnóstico que motivou o padrão: as cinco centrais tinham os blocos do
+    site, mas o SEO se resumia ao title e à meta da home, o FAQ apontava para o
+    da página de Destaque e nenhuma tratava GEO nem a camada técnica.
+
+    Na LAAE isso corrigiu três erros que estavam publicados na central: a meta
+    da home dizia "Acreditação CGCRE/Inmetro desde 2003" (2003 é a fundação, não
+    a acreditação); a meta da página Solutudo dizia "acreditado" sem a ressalva
+    do escopo e citava quatro das nove cidades; e o texto prometia "demais
+    cidades do Norte de Minas", região onde Diamantina, Curvelo e Araçuaí nem
+    ficam. Também caiu a recomendação de nove páginas de cidade: sem fato
+    próprio de cada cidade, seriam páginas que só trocam o nome, o padrão que as
+    atualizações de spam do Google derrubam. Ficou uma página de coleta com as
+    nove.
+
+    Dois bloqueios da LAAE continuam com o CS: se o Solusite existe (o campo
+    está false e há seis imagens de Solusite no cadastro) e qual domínio ele
+    usa, porque convivendo com o site atual são três vitrines com o mesmo texto.
+
 As centrais anteriores (Pizza Frita Semião, Porto Certo, EA3, Blocok) não são
-refeitas por causa dos itens 9 a 13 — a regra vale da LAAE em diante.
+refeitas por causa dos itens 9 a 14 — a regra vale da LAAE em diante.
 
 Referência: `docs/editorias-conteudo.md`. Primeiro caso aplicado com esse rigor:
 a central do LAAE.
