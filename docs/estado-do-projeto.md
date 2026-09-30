@@ -812,6 +812,25 @@ não tratamento de rodapé. Na prática, o que a aba Conteúdo precisa entregar:
     "serviços acreditados", com a ressalva do escopo. As regras entraram em
     `docs/solusite-padrao.md`, §3, §4.1 a §4.3 e na especificação de bolso.
 
+15. **Processo de entrada pela API do cadastro** (definido em 30/09/2026,
+    `docs/processo-api-cadastro.md` no soluintel). Cada central começa pelo link
+    `getData?key=<CHAVE>&id=<ID>` da API da Solutudo; só a ID muda de um
+    parceiro para outro. O hub de parceiros ganhou, no topo, o bloco
+    "Começar um parceiro": um gerador de link por ID, o fluxo em seis passos
+    (pegar a ID, trocar no link, abrir a API, colar na conversa, agentes na
+    curadoria, central publicada) e as melhorias em ordem de ganho.
+
+    **A chave não fica em nenhum arquivo.** Os dois repositórios e o site são
+    públicos, e a API devolve nome, telefone e e-mail do patrocinador. A chave
+    é colada uma vez no gerador e fica só no navegador de quem usa.
+
+    A ideia é automatizar: percorrer os clientes Solutudo, pegar as IDs, gerar
+    o link, ler o cadastro e produzir todos os conteúdos de cada empresa. O que
+    falta para isso, em ordem: liberar `api.solutudo.com` na rede do ambiente
+    do Claude (deu 403 em 30/09) e guardar a chave como segredo do ambiente em
+    `SOLUTUDO_API_KEY`. Com os dois, a entrada passa a ser só a ID ou uma lista
+    delas. Primeiro caso pelo processo: Grupo Execon, ID 23008544.
+
 As centrais anteriores (Pizza Frita Semião, Porto Certo, EA3, Blocok) não são
 refeitas por causa dos itens 9 a 14 — a regra vale da LAAE em diante.
 
