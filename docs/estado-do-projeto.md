@@ -836,3 +836,45 @@ refeitas por causa dos itens 9 a 14 — a regra vale da LAAE em diante.
 
 Referência: `docs/editorias-conteudo.md`. Primeiro caso aplicado com esse rigor:
 a central do LAAE.
+
+---
+
+## 12. Grupo Execon — sexta empresa, primeira pelo processo da API
+
+Construtora de São Paulo/SP (ID 23008544), Força Digital Essencial, setor regulado. Central em
+`artefatos/parceiros/grupo-execon/`, com cinco abas: Parceiro · Agentes · Destaque · Solusite ·
+Conteúdo. É a primeira central que nasce do processo do item 15 (cadastro colado a partir da API) e a
+primeira em que o pipeline de agentes roda inteiro sobre um parceiro: quatro descobridores, o
+verificador adversarial, dois redatores sem internet, o planejador de pauta, o auditor de indexação e
+o supervisor. Dossiê completo no scratchpad da sessão (`dossie-grupo-execon/`, arquivos 00 a 50).
+
+**O pedido:** melhorar a descrição, incluir a atuação nos Estados Unidos e o foco em alto padrão,
+comparar o Solusite atual (prévia em desenvolvimento pela Solutudo) com o proposto e montar as
+editorias.
+
+**O que a curadoria mudou no pedido:**
+- **Estados Unidos:** nenhuma fonte pública liga a empresa aos EUA; a única fonte é a própria
+  Solutudo (o pedido e o banner montado dois dias antes). O verificador travou uma frase só, "está
+  em expansão para os Estados Unidos", fora da abertura, do title e da meta. Sobe de nível com a
+  pré-condição 4: estado e cidade, empresa americana, licença estadual de construtor, tipo de serviço.
+- **Alto padrão:** entra sem "exclusivamente" e sem "referência": dois canais da empresa dizem
+  "médio e alto padrão".
+- **29 afirmações barradas e 11 conflitos:** anos de atuação (9, 10 e 12 anos em canais diferentes;
+  12/05/1999 é o valor-padrão), números de obras e m² divergentes, três endereços (dois em prédio de
+  escritório compartilhado; bairro do cadastro errado), "projetos arquitetônicos" sem CAU, CREA com
+  formato de registro de profissional, a loteadora dos condomínios sem vínculo comprovado.
+- **Página duplicada na Solutudo** (ID 23064979, mesmos telefones e e-mail): reprova o gate até ser
+  resolvida.
+
+**Resultado:** descrição 33 → 81 pela mesma régua (212 palavras, fonte em cada frase, selo B). O
+catálogo de 9 produtos vira 8 páginas publicáveis, entre 80 e 82: o "Construtora Especializada"
+vira a página da casa de alto padrão; acompanhamento é fundido em gerenciamento; projeto
+arquitetônico e projeto estrutural ficam reservados até CAU e CREA; entram reforma e condomínios do
+interior. A auditoria reprovou com 9 correções de forma, aplicadas literalmente: a frase dos EUA
+escapando para o FAQ e para metas, os condomínios fora da forma segura, a lista de serviços
+divergente entre canais e "Execon" sozinho em frases citáveis, que um homônimo herdaria.
+
+**Achados que valem para a base:** o tradutor automático do navegador aparece de novo (6 de 9
+produtos; na LAAE, 3 de 4); os IDs de arquivo do cadastro carregam a data de criação em hex, e foi
+isso que mostrou o texto de 2022 convivendo com o banner de 28/09/2026; a data-padrão de fundação
+está em 6 de 6 parceiros.
