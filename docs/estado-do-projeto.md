@@ -886,3 +886,41 @@ duplicada e à confirmação escrita da frase dos EUA. A régua também foi corr
 produtos; na LAAE, 3 de 4); os IDs de arquivo do cadastro carregam a data de criação em hex, e foi
 isso que mostrou o texto de 2022 convivendo com o banner de 28/09/2026; a data-padrão de fundação
 está em 6 de 6 parceiros.
+
+---
+
+## 13. Pacote de continuidade — 01/10/2026
+
+Para levar o projeto a outra conta do Claude, foi montado o **pacote de continuidade**,
+`A-Fonte_pacote-de-continuidade.zip`, com 100 arquivos, entregue na conversa. Ele reúne:
+
+- o manual de operação do Claude (`CLAUDE.md`);
+- o resumo de tudo o que está configurado;
+- as 63 regras consolidadas, cada uma com a origem;
+- o passo a passo da ID à central publicada, com os pedidos reais feitos aos agentes;
+- a rubrica das notas, as seis empresas, as pendências com dono e o prompt inicial.
+
+O pacote leva também o que só existia no espaço temporário da sessão: o dossiê dos agentes da Execon e
+os scripts que montam as centrais. Rodados numa pasta nova, os scripts geram a central da Execon
+idêntica, byte a byte, à publicada.
+
+A parte pública está em `pacote-continuidade/`, neste repositório. Ficam só no zip:
+
+- o dossiê, que traz o CNPJ;
+- as centrais em texto, com os dados de patrocinador retirados;
+- os pedidos reais dos agentes.
+
+O pacote foi conferido por um agente revisor contra os repositórios e as centrais. Ele achou 14
+discrepâncias, todas corrigidas antes da entrega. Três achados viraram pendência:
+
+- **B6:** as centrais publicadas trazem dados do patrocinador, mesmo marcados como "uso interno":
+  - Pizza Frita Semião: nome, telefone e e-mail;
+  - LAAE: nome e telefone;
+  - EA3: nome, telefone e e-mail;
+  - Blocok: o nome;
+  - Porto Certo: o e-mail pessoal do consultor.
+- **A5:** o `soluintel/docs/estado-do-projeto.md` está defasado. O cabeçalho é de 27/08/2026 e a tabela
+  de parceiros não tem Blocok nem LAAE.
+- **Veredito da Execon:** o supervisor deu REPROVADO na 1ª passada e escreveu que, com as 31 trocas
+  aplicadas, o veredito vira APROVADO COM RESSALVAS. As trocas foram aplicadas, mas não houve 2ª
+  passada para conferir.

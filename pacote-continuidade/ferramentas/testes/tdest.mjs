@@ -1,0 +1,13 @@
+import { createRequire } from 'module';
+const require = createRequire(import.meta.url);
+const { chromium } = require('/opt/node22/lib/node_modules/playwright');
+const b = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium' });
+const p = await b.newPage({ viewport: { width: 1500, height: 1000 }, deviceScaleFactor: 1.5 });
+await p.route('**://solutudo-cdn.s3-sa-east-1.amazonaws.com/**', r => r.abort());
+await p.route('**://fonts.g*/**', r => r.abort());
+await p.goto('http://localhost:8765/artefatos/parceiros/laae-laboratorio/#dest', { waitUntil: 'load' });
+await p.addStyleTag({ content: 'html{scroll-behavior:auto!important}' });
+await p.evaluate(() => document.querySelector('#p-dest .cmp').scrollIntoView()); await p.waitForTimeout(400);
+await p.screenshot({ path: 'dd-desc.png' });
+console.log(JSON.stringify(await p.evaluate(() => ({ ld: (()=>{ try{ return JSON.parse(document.getElementById('ld-sobre').textContent)['@graph'][1].address.streetAddress; }catch(e){ return String(e);} })(), meta: [...document.querySelectorAll('#p-dest .kv dd')].map(x=>x.textContent).find(t=>t.startsWith('Laboratório')) }))));
+await b.close();

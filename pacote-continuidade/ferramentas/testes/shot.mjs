@@ -1,0 +1,12 @@
+import { createRequire } from 'module';
+const require = createRequire('/opt/node22/lib/node_modules/');
+const { chromium } = require('/opt/node22/lib/node_modules/playwright');
+const [,, url, out, w='1400', h='900', full='0'] = process.argv;
+const b = await chromium.launch({executablePath:'/opt/pw-browsers/chromium'});
+const p = await b.newPage({viewport:{width:+w,height:+h}});
+await p.route(/fonts\.(googleapis|gstatic)\.com|cdnjs|jsdelivr|unpkg/, r=>r.abort());
+const errs=[]; p.on('pageerror', e=>errs.push(e.message));
+await p.goto(url); await p.waitForTimeout(700);
+await p.screenshot({path:out, fullPage: full==='1'});
+console.log('errors:', errs.length? errs : 'none');
+await b.close();

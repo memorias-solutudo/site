@@ -1,0 +1,18 @@
+import { createRequire } from 'module';
+const require = createRequire('/opt/node22/lib/node_modules/');
+const { chromium } = require('/opt/node22/lib/node_modules/playwright');
+const b = await chromium.launch({executablePath:'/opt/pw-browsers/chromium'});
+const p = await b.newPage({viewport:{width:1400,height:900}});
+await p.route(/fonts\.(googleapis|gstatic)\.com|amazonaws/, r=>r.abort());
+const errs=[]; p.on('pageerror', e=>errs.push(e.message));
+await p.goto('http://localhost:8765/artefatos/parceiros/'); await p.waitForTimeout(500);
+const r = await p.evaluate(()=>({cards: document.querySelectorAll('.pcard').length, count: document.getElementById('fcount').textContent, exe: !!document.querySelector('.pcard[data-nome="Grupo Execon"]')}));
+await p.click('.pnav-btn'); await p.waitForTimeout(200);
+const menu = await p.$$eval('.pnav-i__n', els=>els.map(e=>e.textContent));
+await p.fill('#q', 'ninho verde'); await p.waitForTimeout(150);
+const vis = await p.$$eval('.pcard', els=>els.filter(e=>!e.hidden).map(e=>e.dataset.nome));
+await p.goto('http://localhost:8765/artefatos/parceiros/grupo-execon/'); await p.waitForTimeout(500);
+await p.click('.pnav-btn'); await p.waitForTimeout(200);
+const cur = await p.$$eval('.pnav-i[aria-current="page"] .pnav-i__n', els=>els.map(e=>e.textContent));
+console.log(JSON.stringify({r, menu, vis, cur, errs}));
+await b.close();
