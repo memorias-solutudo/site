@@ -874,6 +874,14 @@ interior. A auditoria reprovou com 9 correções de forma, aplicadas literalment
 escapando para o FAQ e para metas, os condomínios fora da forma segura, a lista de serviços
 divergente entre canais e "Execon" sozinho em frases citáveis, que um homônimo herdaria.
 
+**Supervisão:** aprovou descoberta, verificação e auditoria e reprovou a primeira passada da
+redação e da pauta. A pauta, escrita em paralelo com a auditoria, repetia o que a auditoria tinha
+corrigido, e trazia o destaque "Serviços", que o cliente vetou nesta sessão. A reforma residencial
+estava como fato do cadastro, que só tem a comercial. As 31 trocas literais do supervisor foram
+aplicadas por código. Com elas, o veredito é **aprovado com ressalvas**, condicionado à página
+duplicada e à confirmação escrita da frase dos EUA. A régua também foi corrigida no caminho: ela dava
+3 pontos por citar os EUA, ou seja, premiava a frase que espera confirmação.
+
 **Achados que valem para a base:** o tradutor automático do navegador aparece de novo (6 de 9
 produtos; na LAAE, 3 de 4); os IDs de arquivo do cadastro carregam a data de criação em hex, e foi
 isso que mostrou o texto de 2022 convivendo com o banner de 28/09/2026; a data-padrão de fundação
